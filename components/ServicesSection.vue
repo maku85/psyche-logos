@@ -1,5 +1,5 @@
 <template>
-  <v-content grid-list-lg id="services" class="text-center">
+  <v-content id="services" grid-list-lg class="text-center">
     <v-layout row wrap>
       <v-flex xs12 sm6 md3 class="service-box-1 text-center">
         <div class="px-5 py-15">

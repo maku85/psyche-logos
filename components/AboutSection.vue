@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid grid-list-lg id="about">
+  <v-container id="about" fluid grid-list-lg>
     <v-container>
       <v-layout row wrap>
         <v-flex xs12 sm6 class="about-details text-center">

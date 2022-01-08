@@ -24,13 +24,9 @@ export default {
     publicPath: '/assets/',
   },
 
-  
   modules: [],
 
-  buildModules: [
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify',
-  ],
+  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/vuetify'],
 
   css: [],
 

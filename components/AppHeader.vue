@@ -121,10 +121,10 @@
       <v-toolbar flat>
         <div class="hidden-sm-and-down">
           <NuxtLink
-            class="menu-item"
             v-for="({ text, link }, i) in items"
             :key="i"
             :to="link"
+            class="menu-item"
           >
             {{ text }}
           </NuxtLink>
@@ -139,21 +139,10 @@
   </div>
 </template>
 
-<style scoped>
-.v-toolbar {
-  transition: 0.6s;
-}
-.expand {
-  height: 80px !important;
-  padding-top: 10px;
-}
-</style>
-
 <script>
 export default {
   data: () => ({
     drawer: null,
-    isXs: false,
     items: [
       { icon: 'mdi-home-outline', text: 'Home', link: '/' },
       { icon: 'mdi-information-outline', text: 'Chi sono', link: '/about' },
@@ -162,24 +151,6 @@ export default {
       { icon: 'mdi-email-outline', text: 'Contatti', link: '/contact' },
     ],
   }),
-  props: {
-    color: String,
-    flat: Boolean,
-  },
-  methods: {
-    onResize() {
-      this.isXs = window.innerWidth < 650
-    },
-  },
-  watch: {
-    isXs(value) {
-      if (!value) {
-        if (this.drawer) {
-          this.drawer = false
-        }
-      }
-    },
-  },
   mounted() {
     this.onResize()
     window.addEventListener('resize', this.onResize, { passive: true })
@@ -187,7 +158,6 @@ export default {
     let prevScrollpos = window.pageYOffset
     window.onscroll = function () {
       const currentScrollPos = window.pageYOffset
-      console.log({ currentScrollPos })
       if (prevScrollpos > currentScrollPos) {
         document.getElementById('navigation').style.top = '0'
       } else {

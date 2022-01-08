@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid id="approach">
+  <v-container id="approach" fluid>
     <v-container class="text-center">
       <h3>My approach</h3>
       <p class="subheading mt-3">

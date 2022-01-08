@@ -68,7 +68,7 @@
     >
       {{ snackbar.text }}
 
-      <template v-slot:action="{ attrs }">
+      <template #action="{ attrs }">
         <v-btn text v-bind="attrs" @click="snackbar.enabled = false">
           Fechar
         </v-btn>
