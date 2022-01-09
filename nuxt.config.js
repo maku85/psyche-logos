@@ -20,10 +20,6 @@ export default {
 
   plugins: [],
 
-  build: {
-    publicPath: '/assets/',
-  },
-
   modules: [],
 
   buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/vuetify'],
