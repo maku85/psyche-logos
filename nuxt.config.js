@@ -20,8 +20,8 @@ export default {
 
   plugins: [],
 
-  build: {
-    publicPath: '/psyche-logos/',
+  router: {
+    base: '/psyche-logos/',
   },
 
   modules: [],
