@@ -20,6 +20,10 @@ export default {
 
   plugins: [],
 
+  build: {
+    publicPath: '/psyche-logos/',
+  },
+
   modules: [],
 
   buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/vuetify'],
