@@ -99,16 +99,16 @@ export default {
 <style lang="scss" scoped>
 #services {
   .services-1 {
-    background-color: #ccc6c6;
+    background-color: #b5e48c;
   }
   .services-2 {
-    background-color: #f0eded;
+    background-color: #99d98c;
   }
   .services-3 {
-    background-color: #fadcd6;
+    background-color: #76c893;
   }
   .services-4 {
-    background-color: #e5c7b5;
+    background-color: #52b69a;
   }
 }
 </style>

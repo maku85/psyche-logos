@@ -73,16 +73,16 @@ export default {
   }
 
   .service-box-1 {
-    background-color: #ccc6c6;
+    background-color: #b5e48c;
   }
   .service-box-2 {
-    background-color: #f0eded;
+    background-color: #99d98c;
   }
   .service-box-3 {
-    background-color: #fadcd6;
+    background-color: #76c893;
   }
   .service-box-4 {
-    background-color: #e5c7b5;
+    background-color: #52b69a;
   }
 }
 </style>

@@ -49,6 +49,6 @@ export default {
 
 <style lang="scss" scoped>
 #approach {
-  background-color: #f0eded;
+  background-color: #d9ed92;
 }
 </style>

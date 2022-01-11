@@ -32,7 +32,7 @@
 
 <style lang="scss" scoped>
 #about {
-  background-color: #ccc6c6;
+  background-color: #d9ed92;
   padding: 100px 0;
 
   h3 {

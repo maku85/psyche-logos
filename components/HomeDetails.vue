@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 #approach {
-  background-color: #f7f6f6;
+  background-color: #d9ed92;
   padding: 100px 0;
 
   h3 {
