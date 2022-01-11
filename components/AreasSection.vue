@@ -1,7 +1,7 @@
 <template>
   <v-container id="approach" fluid>
     <v-container class="text-center">
-      <h3>My approach</h3>
+      <h3>Aree di intervento</h3>
       <p class="subheading mt-3">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pulvinar
         risus quis mauris interdum, in euismod nibh pretium. Etiam pulvinar
@@ -12,7 +12,7 @@
         efficitur. Vivamus in tortor gravida eros laoreet condimentum nec vel
         dui. Nullam quam massa, ultrices eget tincidunt a, pulvinar ac libero.
       </p>
-      <v-btn text to="/approach">leggi altro </v-btn>
+      <v-btn text to="/areas">leggi altro </v-btn>
     </v-container>
   </v-container>
 </template>
@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 #approach {
-  background-color: #d9ed92;
+  background-color: #b5e48c;
   padding: 100px 0;
 
   h3 {

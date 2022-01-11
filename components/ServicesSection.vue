@@ -1,9 +1,9 @@
 <template>
   <v-content id="services" grid-list-lg class="text-center">
     <v-layout row wrap>
-      <v-flex xs12 sm6 md3 class="service-box-1 text-center">
+      <v-flex xs12 sm4 class="service-box-1 text-center">
         <div class="px-5 py-15">
-          <h3>Individual Psychotherapy</h3>
+          <h3>Psicoterapia individuale</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
             mauris felis, varius rutrum massa a, dignissim ornare dui. Cras eget
@@ -13,9 +13,9 @@
         </div>
       </v-flex>
 
-      <v-flex xs12 sm6 md3 class="service-box-2 text-center">
+      <v-flex xs12 sm4 class="service-box-2 text-center">
         <div class="px-5 py-15">
-          <h3>Couples Therapy</h3>
+          <h3>Sostegno piscologico</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
             mauris felis, varius rutrum massa a, dignissim ornare dui. Cras eget
@@ -25,21 +25,9 @@
         </div>
       </v-flex>
 
-      <v-flex xs12 sm6 md3 class="service-box-3 text-center">
+      <v-flex xs12 sm4 class="service-box-3 text-center">
         <div class="px-5 py-15">
-          <h3>Sex Therapy</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            mauris felis, varius rutrum massa a, dignissim ornare dui. Cras eget
-            velit eu dui tristique lobortis sit amet vel tellus.
-          </p>
-          <v-btn to="/services" text>leggi altro</v-btn>
-        </div>
-      </v-flex>
-
-      <v-flex xs12 sm6 md3 class="service-box-4 text-center">
-        <div class="px-5 py-15">
-          <h3>Family Therapy</h3>
+          <h3>Supporto specialistico BES/DSA</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
             mauris felis, varius rutrum massa a, dignissim ornare dui. Cras eget

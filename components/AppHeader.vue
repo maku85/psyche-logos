@@ -146,8 +146,13 @@ export default {
     items: [
       { icon: 'mdi-home-outline', text: 'Home', link: '/' },
       { icon: 'mdi-information-outline', text: 'Chi sono', link: '/about' },
-      { icon: 'mdi-download-box-outline', text: 'Servizi', link: '/services' },
-      { icon: 'mdi-currency-usd', text: 'Il mio approccio', link: '/approach' },
+      { icon: 'mdi-ballot-outline', text: 'Servizi', link: '/services' },
+      {
+        icon: 'mdi-book-open-blank-variant',
+        text: 'Il mio approccio',
+        link: '/approach',
+      },
+      { icon: 'mdi-bandage', text: 'Aree di intervento', link: '/areas' },
       { icon: 'mdi-email-outline', text: 'Contatti', link: '/contact' },
     ],
   }),
