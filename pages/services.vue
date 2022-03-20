@@ -4,8 +4,14 @@
       <section class="services-1">
         <v-container>
           <v-row class="py-8">
-            <v-col class="text-center">
-              <div class="display-1 pb-4">Psicoterapia individuale</div>
+            <v-col>
+              <div class="display-1 pb-4">Grief & Loss Counseling</div>
+
+              <p>
+                Elementum class viverra orci hymenaeos curae;. Rhoncus
+                adipiscing. Conubia condimentum quam taciti dictumst, diam proin
+                consectetuer leo malesuada fames praesent
+              </p>
 
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do
@@ -25,8 +31,14 @@
       <section class="services-2">
         <v-container>
           <v-row class="py-8">
-            <v-col class="text-center">
-              <div class="display-1 pb-4">Sostegno piscologico</div>
+            <v-col>
+              <div class="display-1 pb-4">Self Esteem Therapy</div>
+
+              <p>
+                Elementum class viverra orci hymenaeos curae;. Rhoncus
+                adipiscing. Conubia condimentum quam taciti dictumst, diam proin
+                consectetuer leo malesuada fames praesent
+              </p>
 
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do
@@ -46,8 +58,14 @@
       <section class="services-3">
         <v-container>
           <v-row class="py-8">
-            <v-col class="text-center">
-              <div class="display-1 pb-4">Supporto specialistico BES/DSA</div>
+            <v-col>
+              <div class="display-1 pb-4">Kids & Family</div>
+
+              <p>
+                Elementum class viverra orci hymenaeos curae;. Rhoncus
+                adipiscing. Conubia condimentum quam taciti dictumst, diam proin
+                consectetuer leo malesuada fames praesent
+              </p>
 
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do
@@ -77,17 +95,12 @@ export default {
 
 <style lang="scss" scoped>
 #services {
-  .services-1 {
-    background-color: #b5e48c;
+  .container {
+    border-bottom: 1px solid #ebebeb;
   }
-  .services-2 {
-    background-color: #99d98c;
-  }
-  .services-3 {
-    background-color: #76c893;
-  }
-  .services-4 {
-    background-color: #52b69a;
+
+  p {
+    color: #5f5f5f;
   }
 }
 </style>

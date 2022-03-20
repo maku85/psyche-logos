@@ -118,6 +118,7 @@ export default {
     .header-logo-wrap,
     .header-logo {
       height: 100%;
+      max-width: 90%;
     }
 
     .menu-item {

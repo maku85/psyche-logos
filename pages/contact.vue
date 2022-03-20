@@ -1,12 +1,12 @@
 <template>
   <section id="contact">
     <v-container>
-      <v-row>
+      <v-row class="d-flex align-center">
         <v-col>
           <p class="sub-heading">Get in touch</p>
           <h2>Have queries before the appointment?</h2>
 
-          <v-list-item three-line>
+          <v-list-item three-line class="mt-4">
             <v-list-item-icon>
               <v-icon> mdi-message-text</v-icon>
             </v-list-item-icon>

@@ -1,6 +1,7 @@
 <template>
   <v-form ref="form" v-model="valid" :lazy-validation="lazy">
     <v-text-field
+      color="#a57355"
       v-model="name"
       :rules="nameRules"
       label="Name*"
@@ -8,6 +9,7 @@
     ></v-text-field>
 
     <v-text-field
+      color="#a57355"
       v-model="email"
       :rules="emailRules"
       label="E-mail*"
@@ -15,6 +17,7 @@
     ></v-text-field>
 
     <v-textarea
+      color="#a57355"
       v-model="textArea"
       :rules="textAreaRules"
       label="Message*"
@@ -25,8 +28,8 @@
       :disabled="!valid"
       color="#a57355"
       :dark="valid"
-      rounded
       block
+      flat
       class="mt-3"
       @click="submit"
     >

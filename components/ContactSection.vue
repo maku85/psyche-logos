@@ -5,7 +5,7 @@
         <v-col cols="10">
           <v-row justify="center">
             <v-col cols="12" sm="5">
-              <h3>Contat me</h3>
+              <h3>Contact me</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
                 explicabo commodi quisquam asperiores dolore ad enim provident
@@ -17,42 +17,9 @@
             </v-col>
 
             <v-col cols="12" sm="7">
-              <v-form ref="form" v-model="valid" :lazy-validation="lazy">
-                <v-text-field
-                  v-model="name"
-                  :rules="nameRules"
-                  label="Name"
-                  required
-                ></v-text-field>
-
-                <v-text-field
-                  v-model="email"
-                  :rules="emailRules"
-                  label="E-mail"
-                  required
-                ></v-text-field>
-
-                <v-textarea
-                  v-model="textArea"
-                  :rules="textAreaRules"
-                  label="Message"
-                  required
-                />
-
-                <recaptcha />
-
-                <v-btn
-                  :disabled="!valid"
-                  color="primary"
-                  :dark="valid"
-                  rounded
-                  block
-                  class="mt-3"
-                  @click="submit"
-                >
-                  Submit
-                </v-btn>
-              </v-form>
+              <div class="contact-box text-center">
+                <contact-form></contact-form>
+              </div>
             </v-col>
           </v-row>
         </v-col>
@@ -133,7 +100,7 @@ export default {
 
 <style lang="scss" scoped>
 #contact {
-  background-color: #fff;
+  background: url(http://www.slashcreative.co/themes/psychare/wp-content/uploads/2020/11/form-bg-pattern.png?id=432);
   padding: 100px 0;
 
   h3 {
@@ -155,6 +122,26 @@ export default {
     height: 3rem;
     width: 100%;
     overflow: hidden;
+  }
+
+  .contact-box {
+    border-top-width: 1px !important;
+    border-right-width: 1px !important;
+    border-bottom-width: 1px !important;
+    border-left-width: 1px !important;
+    padding-top: 50px !important;
+    padding-right: 50px !important;
+    padding-bottom: 20px !important;
+    padding-left: 50px !important;
+    border-left-color: #eeeeee !important;
+    border-left-style: solid !important;
+    border-right-color: #eeeeee !important;
+    border-right-style: solid !important;
+    border-top-color: #eeeeee !important;
+    border-top-style: solid !important;
+    border-bottom-color: #eeeeee !important;
+    border-bottom-style: solid !important;
+    background-color: #f7f5f5;
   }
 }
 </style>
