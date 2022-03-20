@@ -1,10 +1,9 @@
 <template>
   <div>
     <home-hero></home-hero>
+    <areas-section></areas-section>
     <about-section></about-section>
     <services-section></services-section>
-    <approach-section></approach-section>
-    <areas-section></areas-section>
     <contact-section></contact-section>
   </div>
 </template>

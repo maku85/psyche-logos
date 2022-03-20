@@ -1,31 +1,19 @@
 <template>
-  <v-footer padless>
-    <v-card flat tile class="text-center">
-      <v-card-text>
-        <socials></socials>
-      </v-card-text>
-
-      <v-card-text class="pt-0">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
-        Mauris cursus commodo interdum.
-      </v-card-text>
-
-      <v-divider></v-divider>
-
-      <v-card-text>
-        {{ new Date().getFullYear() }} -
-        <NuxtLink to="/privacy-policy">Privacy police</NuxtLink>
-      </v-card-text>
-    </v-card>
+  <v-footer id="app-footer" padless>
+    <v-container>
+      <v-col>
+        <div class="text-center">
+          {{ new Date().getFullYear() }} -
+          <NuxtLink to="/privacy-policy">Privacy police</NuxtLink>
+        </div>
+      </v-col>
+    </v-container>
   </v-footer>
 </template>
 
 <style lang="scss" scoped>
-.v-card {
-  width: 100%;
-}
-.v-footer .v-card {
-  background-color: #e8eff1;
-  color: #6e6e6d;
+#app-footer {
+  color: rgb(255 255 255/75%) !important;
+  background-color: #2e2928;
 }
 </style>

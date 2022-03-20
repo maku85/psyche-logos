@@ -26,12 +26,28 @@ export default {
 
   modules: ['@nuxtjs/recaptcha'],
 
-  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/vuetify'],
+  buildModules: [
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/vuetify',
+  ],
 
   css: [],
 
+  googleFonts: {
+    families: {
+      Mulish: true,
+    },
+  },
+
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
+    defaultAssets: {
+      font: {
+        family: 'Mulish',
+      },
+    },
     theme: {
       dark: false,
       themes: {

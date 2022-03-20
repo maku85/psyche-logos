@@ -2,7 +2,7 @@
   <v-app>
     <app-header></app-header>
 
-    <v-content style="margin-top: 176px" transition="slide-x-transition">
+    <v-content transition="slide-x-transition">
       <v-main>
         <Nuxt />
       </v-main>
