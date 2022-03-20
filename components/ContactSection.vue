@@ -39,6 +39,8 @@
                   required
                 />
 
+                <recaptcha />
+
                 <v-btn
                   :disabled="!valid"
                   color="primary"
@@ -104,8 +106,27 @@ export default {
       color: '',
     },
   }),
+  beforeDestroy() {
+    this.$recaptcha.destroy()
+  },
+  async mounted() {
+    try {
+      await this.$recaptcha.init()
+    } catch (e) {
+      console.error(e)
+    }
+  },
   methods: {
-    submit() {},
+    async submit() {
+      try {
+        const token = await this.$recaptcha.execute('login')
+        console.log('ReCaptcha token:', token)
+
+        // send token to server alongside your form data
+      } catch (error) {
+        console.log('Login error:', error)
+      }
+    },
   },
 }
 </script>

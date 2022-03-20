@@ -16,15 +16,15 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  router: {
+    base: '/psyche-logos/',
+  },
+
   components: true,
 
   plugins: [],
 
-  build: {
-    publicPath: '/assets/',
-  },
-
-  modules: [],
+  modules: ['@nuxtjs/recaptcha'],
 
   buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/vuetify'],
 
@@ -46,5 +46,11 @@ export default {
         },
       },
     },
+  },
+
+  recaptcha: {
+    hideBadge: false,
+    siteKey: '6Lf1pAAeAAAAAGKi7fABPEt-hG1Nmo_cYtCcy7Mf',
+    version: 3,
   },
 }
