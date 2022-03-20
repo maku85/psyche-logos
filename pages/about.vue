@@ -79,7 +79,7 @@ export default {
 
 <style lang="scss" scoped>
 #about {
-  background-color: #f0eded;
+  background-color: #d9ed92;
 
   .v-image {
     margin: auto;

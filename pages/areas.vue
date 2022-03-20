@@ -4,7 +4,7 @@
       <v-container>
         <v-row class="py-8">
           <v-col class="text-center">
-            <div class="display-1 pb-4">My Approach</div>
+            <div class="display-1 pb-4">Aree di intervento</div>
 
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do
@@ -49,6 +49,6 @@ export default {
 
 <style lang="scss" scoped>
 #approach {
-  background-color: #d9ed92;
+  background-color: #b5e48c;
 }
 </style>

@@ -2,8 +2,9 @@
   <div>
     <home-hero></home-hero>
     <about-section></about-section>
-    <home-details></home-details>
     <services-section></services-section>
+    <approach-section></approach-section>
+    <areas-section></areas-section>
     <contact-section></contact-section>
   </div>
 </template>
