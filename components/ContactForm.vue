@@ -1,24 +1,24 @@
 <template>
   <v-form ref="form" v-model="valid" :lazy-validation="lazy">
     <v-text-field
-      color="#a57355"
       v-model="name"
+      color="#a57355"
       :rules="nameRules"
       label="Name*"
       required
     ></v-text-field>
 
     <v-text-field
-      color="#a57355"
       v-model="email"
+      color="#a57355"
       :rules="emailRules"
       label="E-mail*"
       required
     ></v-text-field>
 
     <v-textarea
-      color="#a57355"
       v-model="textArea"
+      color="#a57355"
       :rules="textAreaRules"
       label="Message*"
       required
