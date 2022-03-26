@@ -145,15 +145,9 @@ export default {
     drawer: null,
     items: [
       { icon: 'mdi-home-outline', text: 'Home', link: '/' },
-      { icon: 'mdi-information-outline', text: 'Chi sono', link: '/about' },
-      { icon: 'mdi-ballot-outline', text: 'Servizi', link: '/services' },
-      {
-        icon: 'mdi-book-open-blank-variant',
-        text: 'Il mio approccio',
-        link: '/approach',
-      },
-      { icon: 'mdi-bandage', text: 'Aree di intervento', link: '/areas' },
-      { icon: 'mdi-email-outline', text: 'Contatti', link: '/contact' },
+      { icon: 'mdi-information-outline', text: 'About me', link: '/about' },
+      { icon: 'mdi-ballot-outline', text: 'Services', link: '/services' },
+      { icon: 'mdi-email-outline', text: 'Contacts', link: '/contact' },
     ],
   }),
   mounted() {
@@ -175,6 +169,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+header {
+  background: #a37b73 !important;
+  color: #f8f7ee !important;
+}
+
+// #cb997e // box 1
+// #b7b7a4 // box 2
+
+// #4c3935 // box text color
+
 #navigation {
   position: fixed;
   width: 100%;
@@ -188,7 +192,7 @@ export default {
 
     &.nuxt-link-active {
       font-weight: bold;
-      color: #e5c7b5;
+      color: #f8f7ee;
     }
   }
 }

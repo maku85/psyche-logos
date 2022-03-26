@@ -25,7 +25,7 @@
   width: 100%;
 }
 .v-footer .v-card {
-  background-color: #e8eff1;
+  background-color: #a37b73;
   color: #6e6e6d;
 }
 </style>

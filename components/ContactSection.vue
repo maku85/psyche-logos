@@ -28,14 +28,14 @@
                 <v-text-field
                   v-model="email"
                   :rules="emailRules"
-                  label="E-mail"
+                  label="Email"
                   required
                 ></v-text-field>
 
                 <v-textarea
                   v-model="textArea"
                   :rules="textAreaRules"
-                  label="Message"
+                  label="Write your message..."
                   required
                 />
 
@@ -112,7 +112,7 @@ export default {
 
 <style lang="scss" scoped>
 #contact {
-  background-color: #fff;
+  background-color: #f8f7ee;
   padding: 100px 0;
 
   h3 {
@@ -134,6 +134,11 @@ export default {
     height: 3rem;
     width: 100%;
     overflow: hidden;
+  }
+
+  .v-btn {
+    background-color: #a37b73 !important;
+    border-color: #a37b73 !important;
   }
 }
 </style>

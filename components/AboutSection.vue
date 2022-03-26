@@ -32,8 +32,9 @@
 
 <style lang="scss" scoped>
 #about {
-  background-color: #d9ed92;
+  background-color: #f8f7ee;
   padding: 100px 0;
+  color: #540b0e;
 
   h3 {
     font-size: 36px;
@@ -44,7 +45,7 @@
 
   p {
     font-size: 15px;
-    color: #666;
+    color: #540b0e;
   }
 
   .v-image {
