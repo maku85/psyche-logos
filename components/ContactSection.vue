@@ -1,64 +1,20 @@
 <template>
   <section id="contact">
-    <v-container fluid>
-      <v-row align="center" justify="center">
-        <v-col cols="10">
-          <v-row justify="center">
-            <v-col cols="12" sm="5">
-              <h3>Contact me</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-                explicabo commodi quisquam asperiores dolore ad enim provident
-                veniam perferendis voluptate, perspiciatis.
-              </p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-              <p>Telefone: +xx (xx) xxxxx-xxxx</p>
-              <p>Email: email@email.com</p>
-            </v-col>
+    <v-container>
+      <v-row class="d-flex" align-items="center">
+        <v-col cols="12" sm="5" class="mt-8">
+          <h3>Contact me</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+            explicabo commodi quisquam asperiores dolore ad enim provident
+            veniam perferendis voluptate, perspiciatis.
+          </p>
+        </v-col>
 
-            <v-col cols="12" sm="7">
-              <<<<<<< HEAD
-              <v-form ref="form" v-model="valid" :lazy-validation="lazy">
-                <v-text-field
-                  v-model="name"
-                  :rules="nameRules"
-                  label="Name"
-                  required
-                ></v-text-field>
-
-                <v-text-field
-                  v-model="email"
-                  :rules="emailRules"
-                  label="Email"
-                  required
-                ></v-text-field>
-
-                <v-textarea
-                  v-model="textArea"
-                  :rules="textAreaRules"
-                  label="Write your message..."
-                  required
-                />
-
-                <v-btn
-                  :disabled="!valid"
-                  color="primary"
-                  :dark="valid"
-                  rounded
-                  block
-                  class="mt-3"
-                  @click="submit"
-                >
-                  Submit
-                </v-btn>
-              </v-form>
-              =======
-              <div class="contact-box text-center">
-                <contact-form></contact-form>
-              </div>
-              >>>>>>> 6a2bf7501fbf8aed0cf64da07ae22c33346f6a9e
-            </v-col>
-          </v-row>
+        <v-col cols="12" sm="7">
+          <div class="contact-box text-center">
+            <contact-form></contact-form>
+          </div>
         </v-col>
       </v-row>
     </v-container>

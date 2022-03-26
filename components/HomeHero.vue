@@ -1,16 +1,17 @@
 <template>
   <v-container fluid fill-height class="home-hero">
     <v-container justify-center align-center column pa-5>
-      <p class="sub-heading">Best psychologist</p>
-      <div class="display-2 font-weight-black white--text text-xs-center">
-        Tranform your
-      </div>
-      <div class="display-2 font-weight-black white--text text-xs-center mb-3">
-        mindset & achieve your goals.
-      </div>
-      <div class="font-weight-bold white--text text-xs-center">
-        Amazing therapies and advice to help you achieve your goals and taking
-        important decisions of your life.
+      <div class="sub-heading mb-5">Best psychologist</div>
+      <div class="font-weight-bold white--text">
+        <div class="display-2 font-weight-bold">Tranform your</div>
+        <div class="display-2 font-italic font-weight-bold">
+          mindset & achieve
+        </div>
+        <div class="display-2 font-weight-bold">your Goals.</div>
+        <p class="mt-5" style="max-width: 500px">
+          Amazing therapies and advice to help you achieve your goals and taking
+          important decisions of your life.
+        </p>
       </div>
     </v-container>
   </v-container>

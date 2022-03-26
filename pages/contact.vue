@@ -1,36 +1,39 @@
 <template>
-  <section id="contact">
-    <v-container>
-      <v-row class="d-flex align-center">
-        <v-col>
-          <p class="sub-heading">Get in touch</p>
-          <h2>Have queries before the appointment?</h2>
+  <v-container fluid class="pa-0">
+    <section id="contact">
+      <v-container pa-8>
+        <v-row class="py-8">
+          <v-col cols="12" xs="12" sm="5" class="mt-8">
+            <p class="sub-heading">Get in touch</p>
+            <h2>Have queries before the appointment?</h2>
 
-          <v-list-item three-line class="mt-4">
-            <v-list-item-icon>
-              <v-icon> mdi-message-text</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title>Let’s Talk</v-list-item-title>
-              <v-list-item-subtitle>
-                <span class="font-700">Phone:</span> +1 921-124-9220<br />
-              </v-list-item-subtitle>
-              <v-list-item-subtitle>
-                <span class="font-700">Email:</span> hi@psychare.com
-              </v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-        </v-col>
-        <v-col>
-          <div class="contact-box text-center">
-            <h4>Write Your Queries</h4>
-            <p>Submit your message and I will get in touch within one day.</p>
-            <contact-form></contact-form>
-          </div>
-        </v-col>
-      </v-row>
-    </v-container>
-  </section>
+            <v-list-item three-line class="mt-4">
+              <v-list-item-icon>
+                <v-icon> mdi-message-text</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title>Let’s Talk</v-list-item-title>
+                <v-list-item-subtitle>
+                  <span class="font-700">Phone:</span> +1 921-124-9220<br />
+                </v-list-item-subtitle>
+                <v-list-item-subtitle>
+                  <span class="font-700">Email:</span> hi@psychare.com
+                </v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+          </v-col>
+
+          <v-col cols="12" xs="12" sm="7">
+            <div class="contact-box text-center">
+              <h4>Write Your Queries</h4>
+              <p>Submit your message and I will get in touch within one day.</p>
+              <contact-form></contact-form>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+  </v-container>
 </template>
 
 <script>

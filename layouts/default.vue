@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss" scoped>
 .main-container {
-  margin-top: 160px;
+  margin-top: 150px;
 }
 
 @media only screen and (max-width: 600px) {

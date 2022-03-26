@@ -17,10 +17,7 @@
       <v-col cols="12" sm="12" md="6">
         <div class="card-2">
           <h3 class="box-title">Call for Consultation</h3>
-          <p class="subheading mt-3">
-            30 minutes free for the first session. T&C Apply
-          </p>
-          <div class="d-flex align-center">
+          <div class="d-flex align-center mt-8">
             <div class="mr-4">
               <v-icon>mdi-phone</v-icon>
             </div>
@@ -43,7 +40,8 @@ export default {
 
 <style lang="scss" scoped>
 #approach {
-  margin-top: -60px;
+  margin-top: -120px;
+  color: #5f5f5f;
 
   .card-1,
   .card-2 {

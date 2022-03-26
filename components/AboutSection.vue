@@ -5,7 +5,9 @@
         <v-flex sm12 md6 class="about-details">
           <div class="px-5 py-15">
             <p class="sub-heading">Let me introduce</p>
-            <h3>I’m Dr. Susan Lopez - Expert Psychologist from New York.</h3>
+            <h3>
+              I’m Dr. Susan Lopez - Expert <em>Psychologist</em> from New York.
+            </h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua minim
@@ -39,7 +41,7 @@
   background: url('/brush-effect-1-1.png');
   background-size: 100%;
   padding: 100px 0;
-  color: #540b0e;
+  color: #5f5f5f;
 
   .sub-heading {
     font-size: 14px;
@@ -80,11 +82,12 @@
     font-weight: 400;
     line-height: 1.3em;
     margin-bottom: 33px;
+    color: #1f1f1f;
   }
 
   p {
     font-size: 15px;
-    color: #540b0e;
+    color: #5f5f5f;
   }
 
   .v-image {

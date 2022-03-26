@@ -3,7 +3,7 @@
     <v-container>
       <v-col>
         <div class="copyright text-center">
-          {{ new Date().getFullYear() }} -
+          &copy; {{ new Date().getFullYear() }} - Rested Minds -
           <NuxtLink to="/privacy-policy">Privacy police</NuxtLink>
         </div>
       </v-col>
@@ -21,6 +21,11 @@
     padding: 10px 15px;
     margin-top: -40px;
     border-radius: 8px;
+
+    a {
+      color: rgb(255 255 255/75%) !important;
+      text-decoration: none;
+    }
   }
 }
 </style>

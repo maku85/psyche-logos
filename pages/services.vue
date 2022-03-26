@@ -13,16 +13,20 @@
                 consectetuer leo malesuada fames praesent
               </p>
 
-                <p class="mt-5">
-                  Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do
-                  eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut
-                  enim ad minim veniam, quis nostrum exercitationem ullamco
-                  laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis
-                  aute irure reprehenderit in voluptate velit esse cillum dolore
-                  eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat
-                  non proident, sunt in culpa qui officia deserunt mollit anim
-                  id est laborum.
-                </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do
+                eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrum exercitationem ullamco
+                laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute
+                irure reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
+              </p>
+            </v-col>
+          </v-row>
+        </v-container>
+      </section>
 
       <section class="services-2">
         <v-container>
@@ -36,16 +40,20 @@
                 consectetuer leo malesuada fames praesent
               </p>
 
-        <section class="services-2">
-          <v-container>
-            <v-row class="py-8">
-              <v-col>
-                <div class="display-2 text-center">
-                  Lorem ipsum dolor sit amet
-                </div>
-                <div class="title pb-4 text-center">
-                  (consectetur adipisci elit)
-                </div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do
+                eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrum exercitationem ullamco
+                laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute
+                irure reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
+              </p>
+            </v-col>
+          </v-row>
+        </v-container>
+      </section>
 
       <section class="services-3">
         <v-container>
@@ -74,6 +82,8 @@
         </v-container>
       </section>
     </section>
+
+    <separator></separator>
 
     <contact-section></contact-section>
   </v-container>
