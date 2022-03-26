@@ -2,23 +2,27 @@
   <v-container id="about" fluid grid-list-lg>
     <v-container>
       <v-layout row wrap>
-        <v-flex xs12 sm6 class="about-details text-center">
+        <v-flex sm12 md6 class="about-details">
           <div class="px-5 py-15">
-            <h3>About me</h3>
+            <p class="sub-heading">Let me introduce</p>
+            <h3>I’m Dr. Susan Lopez - Expert Psychologist from New York.</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do
-              eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrum exercitationem ullamco laboriosam,
-              nisi ut aliquid ex ea commodi consequatur. Duis aute irure
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint obcaecat cupiditat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua minim
+              veniam.
             </p>
-            <v-btn text to="/about">leggi altro </v-btn>
+            <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo inventore veritatis et quasi architecto beatae vitae
+              dicta sunt explicabo. Diam nascetur ad varius curabitur ante donec
+              de proin auctor felis hendrerit.
+            </p>
+            <v-btn color="#a47355" text to="/about">about me ></v-btn>
           </div>
         </v-flex>
 
-        <v-flex xs12 sm6 class="about-image">
+        <v-flex sm12 md6 class="about-image hidden-sm-and-down">
           <v-img
             height="450px"
             width="300px"
@@ -32,9 +36,44 @@
 
 <style lang="scss" scoped>
 #about {
-  background-color: #f8f7ee;
+  background: url('/brush-effect-1-1.png');
+  background-size: 100%;
   padding: 100px 0;
   color: #540b0e;
+
+  .sub-heading {
+    font-size: 14px;
+    color: #a47355;
+    line-height: 1.2;
+    text-align: left;
+    font-weight: 800;
+    padding-left: 88px;
+    letter-spacing: 1.2px;
+    position: relative;
+    text-transform: uppercase;
+    margin-top: 0;
+    &:before {
+      content: '';
+      position: absolute;
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+      background: #a47355;
+      left: 0;
+      top: 6px;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      background: #a47355;
+      top: 8px;
+      left: 14px;
+      height: 2px;
+      opacity: 1;
+      width: 50px;
+      opacity: 0.5;
+    }
+  }
 
   h3 {
     font-size: 36px;

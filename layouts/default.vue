@@ -2,8 +2,8 @@
   <v-app>
     <app-header></app-header>
 
-    <v-content style="margin-top: 176px" transition="slide-x-transition">
-      <v-main>
+    <v-content transition="slide-x-transition">
+      <v-main class="main-container">
         <Nuxt />
       </v-main>
     </v-content>
@@ -17,3 +17,15 @@ export default {
   name: 'DefaultLayout',
 }
 </script>
+
+<style lang="scss" scoped>
+.main-container {
+  margin-top: 160px;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-container {
+    margin-top: 100px;
+  }
+}
+</style>

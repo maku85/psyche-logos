@@ -16,22 +16,38 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  components: true,
-
-  plugins: [],
-
   router: {
     base: '/psyche-logos/',
   },
 
-  modules: [],
+  components: true,
 
-  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/vuetify'],
+  plugins: [],
+
+  modules: ['@nuxtjs/recaptcha'],
+
+  buildModules: [
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/vuetify',
+  ],
 
   css: [],
 
+  googleFonts: {
+    families: {
+      Mulish: true,
+    },
+  },
+
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
+    defaultAssets: {
+      font: {
+        family: 'Mulish',
+      },
+    },
     theme: {
       dark: false,
       themes: {
@@ -46,5 +62,11 @@ export default {
         },
       },
     },
+  },
+
+  recaptcha: {
+    hideBadge: false,
+    siteKey: '6Lf1pAAeAAAAAGKi7fABPEt-hG1Nmo_cYtCcy7Mf',
+    version: 3,
   },
 }

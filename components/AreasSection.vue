@@ -1,19 +1,37 @@
 <template>
-  <v-container id="approach" fluid>
-    <v-container class="text-center">
-      <h3>Aree di intervento</h3>
-      <p class="subheading mt-3">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pulvinar
-        risus quis mauris interdum, in euismod nibh pretium. Etiam pulvinar
-        tincidunt dapibus. Quisque sollicitudin, mauris a consequat consectetur,
-        turpis nisl sollicitudin enim, id consectetur neque neque nec metus.
-        Pellentesque dolor nisi, vulputate quis lobortis ac, tincidunt et quam.
-        Mauris pulvinar blandit nisi nec mattis. Aliquam accumsan ut sem eget
-        efficitur. Vivamus in tortor gravida eros laoreet condimentum nec vel
-        dui. Nullam quam massa, ultrices eget tincidunt a, pulvinar ac libero.
-      </p>
-      <v-btn text to="/areas">leggi altro </v-btn>
-    </v-container>
+  <v-container id="approach">
+    <v-row>
+      <v-col cols="12" sm="12" md="6">
+        <div class="card-1">
+          <h3 class="box-title">How can I help you?</h3>
+          <p class="subheading mt-3">
+            If you’re experiencing any kind of mental illness or problem in
+            relations.
+          </p>
+          <v-btn color="#a47355" dark text to="/services"
+            >explore services</v-btn
+          >
+        </div>
+      </v-col>
+
+      <v-col cols="12" sm="12" md="6">
+        <div class="card-2">
+          <h3 class="box-title">Call for Consultation</h3>
+          <p class="subheading mt-3">
+            30 minutes free for the first session. T&C Apply
+          </p>
+          <div class="d-flex align-center">
+            <div class="mr-4">
+              <v-icon>mdi-phone</v-icon>
+            </div>
+            <div>
+              <div class="text-dimmer">Dial now</div>
+              <div class="text-phone">921-124-9220</div>
+            </div>
+          </div>
+        </div>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -25,19 +43,55 @@ export default {
 
 <style lang="scss" scoped>
 #approach {
-  background-color: #b5e48c;
-  padding: 100px 0;
+  margin-top: -60px;
 
-  h3 {
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 1.3em;
-    margin-bottom: 33px;
+  .card-1,
+  .card-2 {
+    border-radius: 8px;
+    padding-top: 50px !important;
+    padding-right: 35px !important;
+    padding-bottom: 50px !important;
+    padding-left: 35px !important;
+    box-shadow: 0px 6px 60px 0px rgb(51 51 51 / 10%);
   }
 
-  p {
-    font-size: 15px;
-    color: #666;
+  .card-1 {
+    background: #ffffff;
+  }
+
+  .card-2 {
+    color: #fff;
+    background: #6f4839;
+
+    p {
+      opacity: 0.7;
+    }
+
+    i {
+      font-size: 50px;
+    }
+
+    .text-dimmer {
+      color: #fff;
+      font-weight: bold;
+      font-size: 15px;
+      letter-spacing: 1px;
+      margin-bottom: 0;
+      margin-top: 5px;
+      opacity: 0.7;
+      text-transform: uppercase;
+    }
+
+    .text-phone {
+      font-size: 23px;
+      line-height: 30px;
+      font-weight: 800;
+      color: #fff;
+    }
+  }
+
+  .box-title {
+    font-size: 23px;
   }
 }
 </style>

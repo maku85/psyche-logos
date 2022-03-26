@@ -5,7 +5,7 @@
         <v-col cols="10">
           <v-row justify="center">
             <v-col cols="12" sm="5">
-              <h3>Contat me</h3>
+              <h3>Contact me</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
                 explicabo commodi quisquam asperiores dolore ad enim provident
@@ -17,6 +17,7 @@
             </v-col>
 
             <v-col cols="12" sm="7">
+              <<<<<<< HEAD
               <v-form ref="form" v-model="valid" :lazy-validation="lazy">
                 <v-text-field
                   v-model="name"
@@ -51,6 +52,11 @@
                   Submit
                 </v-btn>
               </v-form>
+              =======
+              <div class="contact-box text-center">
+                <contact-form></contact-form>
+              </div>
+              >>>>>>> 6a2bf7501fbf8aed0cf64da07ae22c33346f6a9e
             </v-col>
           </v-row>
         </v-col>
@@ -104,15 +110,34 @@ export default {
       color: '',
     },
   }),
+  beforeDestroy() {
+    this.$recaptcha.destroy()
+  },
+  async mounted() {
+    try {
+      await this.$recaptcha.init()
+    } catch (e) {
+      console.error(e)
+    }
+  },
   methods: {
-    submit() {},
+    async submit() {
+      try {
+        const token = await this.$recaptcha.execute('login')
+        console.log('ReCaptcha token:', token)
+
+        // send token to server alongside your form data
+      } catch (error) {
+        console.log('Login error:', error)
+      }
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
 #contact {
-  background-color: #f8f7ee;
+  background: url(http://www.slashcreative.co/themes/psychare/wp-content/uploads/2020/11/form-bg-pattern.png?id=432);
   padding: 100px 0;
 
   h3 {
@@ -136,9 +161,24 @@ export default {
     overflow: hidden;
   }
 
-  .v-btn {
-    background-color: #a37b73 !important;
-    border-color: #a37b73 !important;
+  .contact-box {
+    border-top-width: 1px !important;
+    border-right-width: 1px !important;
+    border-bottom-width: 1px !important;
+    border-left-width: 1px !important;
+    padding-top: 50px !important;
+    padding-right: 50px !important;
+    padding-bottom: 20px !important;
+    padding-left: 50px !important;
+    border-left-color: #eeeeee !important;
+    border-left-style: solid !important;
+    border-right-color: #eeeeee !important;
+    border-right-style: solid !important;
+    border-top-color: #eeeeee !important;
+    border-top-style: solid !important;
+    border-bottom-color: #eeeeee !important;
+    border-bottom-style: solid !important;
+    background-color: #f7f5f5;
   }
 }
 </style>
