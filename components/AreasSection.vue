@@ -1,7 +1,7 @@
 <template>
   <v-container id="approach">
     <v-row>
-      <v-col cols="12" sm="12" md="6">
+      <v-col cols="12" xs="6" sm="6">
         <div class="card-1">
           <h3 class="box-title">How can I help you?</h3>
           <p class="subheading mt-3">
@@ -14,11 +14,11 @@
         </div>
       </v-col>
 
-      <v-col cols="12" sm="12" md="6">
+      <v-col cols="12" xs="12" sm="6">
         <div class="card-2">
           <h3 class="box-title">Call for Consultation</h3>
           <div class="d-flex align-center mt-8">
-            <div class="mr-4">
+            <div class="mr-5">
               <v-icon>mdi-phone</v-icon>
             </div>
             <div>
@@ -60,6 +60,7 @@ export default {
   .card-2 {
     color: #fff;
     background: #6f4839;
+    opacity: 0.9;
 
     p {
       opacity: 0.7;
@@ -90,6 +91,8 @@ export default {
 
   .box-title {
     font-size: 23px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 }
 </style>

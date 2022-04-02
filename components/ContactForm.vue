@@ -6,6 +6,7 @@
       :rules="nameRules"
       label="Name*"
       required
+      outlined
     ></v-text-field>
 
     <v-text-field
@@ -14,6 +15,7 @@
       :rules="emailRules"
       label="E-mail*"
       required
+      outlined
     ></v-text-field>
 
     <v-textarea
@@ -22,6 +24,7 @@
       :rules="textAreaRules"
       label="Message*"
       required
+      outlined
     />
 
     <v-btn
