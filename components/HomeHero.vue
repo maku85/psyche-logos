@@ -2,14 +2,17 @@
   <v-container fluid fill-height class="home-hero">
     <v-container justify-center align-center column pa-5>
       <div class="font-weight-bold white--text">
-        <div class="hero-heading display-2 font-weight-bold">Tranform your</div>
-        <div class="hero-heading display-2 font-italic font-weight-bold">
-          mindset & achieve
+        <div class="hero-heading display-2 font-weight-bold">
+          {{ heading1 }}
         </div>
-        <div class="hero-heading display-2 font-weight-bold">your Goals.</div>
+        <div class="hero-heading display-2 font-italic font-weight-bold">
+          {{ heading2 }}
+        </div>
+        <div class="hero-heading display-2 font-weight-bold">
+          {{ heading3 }}
+        </div>
         <p class="hero-subheading mt-5" style="max-width: 500px">
-          Amazing therapies and advice to help you achieve your goals and taking
-          important decisions of your life.
+          {{ subHeading }}
         </p>
       </div>
     </v-container>
@@ -19,6 +22,16 @@
 <script>
 export default {
   name: 'HomeHero',
+  data: () => ({
+    heading1: process.env.HERO_HEADING_1 || 'Lorem ipsum dolor sit amet,',
+    heading2: process.env.HERO_HEADING_2 || 'consectetur adipiscing elit,',
+    heading3:
+      process.env.HERO_HEADING_3 ||
+      'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua minim veniam.',
+    subHeading:
+      process.env.HERO_SUB_HEADING ||
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua minim veniam.',
+  }),
 }
 </script>
 

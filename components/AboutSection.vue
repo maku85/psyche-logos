@@ -4,23 +4,11 @@
       <v-layout row wrap>
         <v-flex sm12 md6 class="about-details">
           <div class="px-5 py-15">
-            <p class="sub-heading">Let me introduce</p>
-            <h3>
-              I’m Dr. Susan Lopez - Expert <em>Psychologist</em> from New York.
-            </h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua minim
-              veniam.
-            </p>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Diam nascetur ad varius curabitur ante donec
-              de proin auctor felis hendrerit.
-            </p>
-            <v-btn color="#a47355" text to="/about">about me ></v-btn>
+            <p class="sub-heading">{{ subHeading }}</p>
+            <h3 v-html="heading"></h3>
+            <p>{{ paragraph1 }}</p>
+            <p>{{ paragraph2 }}</p>
+            <v-btn color="#a47355" text to="/about">{{ btnLabel }} ></v-btn>
           </div>
         </v-flex>
 
@@ -35,6 +23,24 @@
     </v-container>
   </v-container>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    subHeading: process.env.ABOUT_SUB_HEADING || 'Let me introduce',
+    heading:
+      process.env.ABOUT_HEADING ||
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua minim veniam.',
+    paragraph1:
+      process.env.ABOUT_PARAGRAPH_1 ||
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua minim veniam.',
+    paragraph2:
+      process.env.ABOUT_PARAGRAPH_2 ||
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua minim veniam.',
+    btnLabel: process.env.ABOUT_BTN_LABEL || 'about me',
+  }),
+}
+</script>
 
 <style lang="scss" scoped>
 #about {

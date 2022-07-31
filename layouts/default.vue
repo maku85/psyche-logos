@@ -23,7 +23,17 @@ export default {
   margin-top: 150px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 576px) {
+  .main-container {
+    margin-top: 100px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .main-container {
+    margin-top: 100px;
+  }
+}
+@media only screen and (max-width: 992px) {
   .main-container {
     margin-top: 100px;
   }

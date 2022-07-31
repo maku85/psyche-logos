@@ -10,27 +10,12 @@
             />
           </v-col>
           <v-col cols="12" sm="12" md="6">
-            <p class="sub-heading">Story of my life</p>
-            <div class="display-1 pb-4">About me</div>
+            <p class="sub-heading">{{ subHeading }}</p>
+            <div class="display-1 pb-4">{{ title1 }}</div>
+            <p v-html="paragraph1"></p>
 
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do
-              eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrum exercitationem ullamco laboriosam,
-              nisi ut aliquid ex ea commodi consequatur. Duis aute irure
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint obcaecat cupiditat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do
-              eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrum exercitationem ullamco laboriosam,
-              nisi ut aliquid ex ea commodi consequatur. Duis aute irure
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint obcaecat cupiditat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <div class="display-1 pb-4">{{ title2 }}</div>
+            <p v-html="paragraph2"></p>
           </v-col>
         </v-row>
       </v-container>
@@ -45,6 +30,17 @@
 <script>
 export default {
   name: 'AboutPage',
+  data: () => ({
+    subHeading: process.env.ABOUT_PAGE_SUB_HEADING || 'Story of my life',
+    title1: process.env.ABOUT_PAGE_TITLE_1 || 'Hi there!',
+    paragraph1:
+      process.env.ABOUT_PAGE_PARAGRAPH_1 ||
+      '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies, nisi ac porta sollicitudin, felis leo dapibus diam, at ultricies sem justo eget leo. Aliquam finibus hendrerit imperdiet. Donec fermentum orci in sagittis bibendum. Cras augue nisi, tristique eu orci nec, iaculis convallis felis. Mauris elementum justo sit amet magna euismod malesuada. Nullam eu euismod purus. Nullam ac diam purus. Fusce rhoncus cursus efficitur. Phasellus non lacinia odio. Ut erat diam, pharetra sit amet commodo a, elementum sed felis. Donec id pellentesque odio. Sed sed iaculis mauris, tempus elementum turpis.</p><p>Nam dictum tellus id leo molestie, eu consectetur erat sollicitudin. Morbi et dolor lacinia, consectetur urna eget, ullamcorper orci. In eleifend imperdiet molestie. Fusce finibus porta pretium. Nunc porttitor mattis odio vitae dignissim. Duis auctor nec mi eget varius. Integer sollicitudin metus eget nunc porttitor, vitae laoreet tellus placerat.</p><p>Duis in aliquet tortor. Pellentesque pellentesque pretium ex. Donec ultrices velit efficitur sapien accumsan, ut suscipit elit rhoncus. Pellentesque eget arcu diam. Fusce et turpis placerat, sodales nisl a, interdum purus. Duis venenatis magna maximus ipsum rhoncus tempus. Sed cursus, elit sed rutrum luctus, dolor sapien convallis sapien, quis elementum libero elit at mauris.</p>',
+    title2: process.env.ABOUT_PAGE_TITLE_2 || 'Experiences',
+    paragraph2:
+      process.env.ABOUT_PAGE_PARAGRAPH_2 ||
+      '<p>Donec fringilla felis ac eros feugiat fermentum. Proin euismod fermentum sem, nec pretium nulla tristique at. Suspendisse eleifend ipsum sed turpis imperdiet, at feugiat orci aliquet. Quisque eget risus libero. Donec eu urna tincidunt, vestibulum quam eget, tristique magna. Suspendisse non elit odio. Duis ornare ac eros et facilisis. Praesent lobortis quam tellus. Aenean vitae orci quis lorem rhoncus tincidunt non quis nibh. Nulla tempus, arcu id commodo viverra, odio mauris posuere velit, id placerat nisi libero vitae leo. Nunc placerat justo vel nibh mollis volutpat. In quis nulla quis nunc mollis imperdiet laoreet sed ex. Donec fermentum scelerisque elit, ac dignissim urna dapibus eget. Suspendisse magna mauris, volutpat id purus sed, vehicula congue neque.</p><p>Vivamus malesuada iaculis ligula, ac bibendum nisi sodales ac. Ut sit amet blandit sem, a accumsan purus. Etiam nisi ante, porta mollis ornare quis, placerat a lorem. Morbi vitae tortor nec turpis feugiat tincidunt. In ut ipsum at ipsum lacinia volutpat. Nunc consequat sit amet lectus vel ornare. Pellentesque ante orci, iaculis a gravida ut, pharetra eget est. Phasellus odio velit, sagittis sit amet nulla porttitor, iaculis porta leo. Nullam quis vehicula ante, non vehicula erat. Cras arcu turpis, tristique et purus in, tempus elementum odio. In hac habitasse platea dictumst. Sed quam metus, malesuada ut tempus a, tincidunt sit amet sem. Aliquam eu suscipit magna. Fusce ligula ipsum, vestibulum et sagittis quis, venenatis id urna. Donec finibus mauris at ipsum sodales rhoncus.</p>',
+  }),
 }
 </script>
 

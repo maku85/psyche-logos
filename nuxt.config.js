@@ -24,7 +24,7 @@ export default {
 
   plugins: [],
 
-  modules: ['@nuxtjs/recaptcha'],
+  modules: ['@nuxtjs/dotenv', '@nuxtjs/recaptcha'],
 
   buildModules: [
     '@nuxtjs/eslint-module',

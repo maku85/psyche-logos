@@ -3,27 +3,24 @@
     <v-row>
       <v-col cols="12" xs="6" sm="6">
         <div class="card-1">
-          <h3 class="box-title">How can I help you?</h3>
-          <p class="subheading mt-3">
-            If you’re experiencing any kind of mental illness or problem in
-            relations.
-          </p>
-          <v-btn color="#a47355" dark text to="/services"
-            >explore services</v-btn
-          >
+          <h3 class="box-title">{{ helpTitle }}</h3>
+          <p class="subheading mt-3">{{ helpParagraph }}</p>
+          <v-btn color="#a47355" dark text to="/services">{{
+            helpBtnLabel
+          }}</v-btn>
         </div>
       </v-col>
 
       <v-col cols="12" xs="12" sm="6">
         <div class="card-2">
-          <h3 class="box-title">Call for Consultation</h3>
+          <h3 class="box-title">{{ contactTitle }}</h3>
           <div class="d-flex align-center mt-8">
             <div class="mr-5">
               <v-icon>mdi-phone</v-icon>
             </div>
             <div>
-              <div class="text-dimmer">Dial now</div>
-              <div class="text-phone">921-124-9220</div>
+              <div class="text-dimmer">{{ contactText }}</div>
+              <div class="text-phone">{{ phone }}</div>
             </div>
           </div>
         </div>
@@ -35,6 +32,16 @@
 <script>
 export default {
   name: 'HomeDetails',
+  data: () => ({
+    helpTitle: process.env.CARD_HELP_TITLE || 'How can I help you?',
+    helpParagraph:
+      process.env.CARD_HELP_PARAGRAPH ||
+      'If you’re experiencing any kind of mental illness or problem in relations.',
+    helpBtnLabel: process.env.CARD_HELP_BTN_LABEL || 'Explore services',
+    contactTitle: process.env.CARD_CONTACT_TITLE || 'Call for Consultation',
+    contactText: process.env.CARD_CONTACT_TEXT || 'Dial now',
+    phone: process.env.PHONE_VALUE || '123-456-7890',
+  }),
 }
 </script>
 

@@ -4,14 +4,10 @@
       <v-row>
         <v-col cols="12" sm="12" md="6">
           <div class="px-5 py-15">
-            <p class="sub-heading">My approach</p>
-            <h2>Personal & Individual therapy sessions.</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              mauris felis, varius rutrum massa a, dignissim ornare dui. Cras
-              eget velit eu dui tristique lobortis sit amet vel tellus.
-            </p>
-            <v-btn to="/services" text>leggi altro</v-btn>
+            <p class="sub-heading">{{ subHeading }}</p>
+            <h2>{{ heading }}</h2>
+            <p>{{ paragraph }}</p>
+            <v-btn to="/services" text>{{ btnLabel }}</v-btn>
           </div>
         </v-col>
 
@@ -19,39 +15,27 @@
           <v-layout row wrap class="px-5 py-15 mt-4">
             <v-flex sm12 md6 class="service-block">
               <h4 class="mb-3">
-                <v-icon color="#a57355">mdi-star</v-icon> Adults
+                <v-icon color="#a57355">mdi-star</v-icon> {{ approachTitle1 }}
               </h4>
-              <p>
-                Life-changing sessions for adults, no matter what age group they
-                belong to.
-              </p>
+              <p>{{ approachDescription1 }}</p>
             </v-flex>
             <v-flex sm12 md6 class="service-block">
               <h4 class="mb-3">
-                <v-icon color="#a57355">mdi-star</v-icon> Children
+                <v-icon color="#a57355">mdi-star</v-icon> {{ approachTitle2 }}
               </h4>
-              <p>
-                A special session for your kids regarding personal problems and
-                study.
-              </p>
+              <p>{{ approachDescription2 }}</p>
             </v-flex>
             <v-flex sm12 md6 class="service-block">
               <h4 class="mb-3">
-                <v-icon color="#a57355">mdi-star</v-icon> Families
+                <v-icon color="#a57355">mdi-star</v-icon> {{ approachTitle3 }}
               </h4>
-              <p>
-                Join me with your family and we’ll dicuss your issues to make
-                your bonds better.
-              </p>
+              <p>{{ approachDescription3 }}</p>
             </v-flex>
             <v-flex sm12 md6 class="service-block">
               <h4 class="mb-3">
-                <v-icon color="#a57355">mdi-star</v-icon> Business
+                <v-icon color="#a57355">mdi-star</v-icon> {{ approachTitle4 }}
               </h4>
-              <p>
-                Arrange a business session for your organization to boost the
-                outcome.
-              </p>
+              <p>{{ approachDescription4 }}</p>
             </v-flex>
           </v-layout>
         </v-col>
@@ -63,6 +47,31 @@
 <script>
 export default {
   name: 'ApproachSection',
+  data: () => ({
+    subHeading: process.env.APPROACH_SUB_HEADING || 'MY PRACTICE',
+    heading:
+      process.env.APPROACH_HEADING || 'Personal & Individual therapy sessions.',
+    paragraph:
+      process.env.APPROACH_PARAGRAPH ||
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua minim veniam.',
+    btnLabel: process.env.APPROACH_BTN_LABEL || 'read more',
+    approachTitle1: process.env.APPROACH_TITLE_1 || 'Adults',
+    approachDescription1:
+      process.env.APPROACH_DESCRIPTION_1 ||
+      'Life-changing sessions for adults, no matter what age group they belong to.',
+    approachTitle2: process.env.APPROACH_TITLE_2 || 'Family',
+    approachDescription2:
+      process.env.APPROACH_DESCRIPTION_2 ||
+      'A special session for your kids regarding personal problems and study.',
+    approachTitle3: process.env.APPROACH_TITLE_3 || 'Children',
+    approachDescription3:
+      process.env.APPROACH_DESCRIPTION_3 ||
+      'Join me with your family and we’ll dicuss your issues to make your bonds better.',
+    approachTitle4: process.env.APPROACH_TITLE_4 || 'Business',
+    approachDescription4:
+      process.env.APPROACH_DESCRIPTION_4 ||
+      'Arrange a business session for your organization to boost the outcome.',
+  }),
 }
 </script>
 

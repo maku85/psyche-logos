@@ -3,12 +3,8 @@
     <v-container>
       <v-row class="d-flex" align-items="center">
         <v-col cols="12" sm="5" class="mt-8">
-          <h3>Contact me</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-            explicabo commodi quisquam asperiores dolore ad enim provident
-            veniam perferendis voluptate, perspiciatis.
-          </p>
+          <h3>{{ title }}</h3>
+          <p>{{ paragraph }}</p>
         </v-col>
 
         <v-col cols="12" sm="7">
@@ -32,7 +28,7 @@
 
       <template #action="{ attrs }">
         <v-btn text v-bind="attrs" @click="snackbar.enabled = false">
-          Fechar
+          Close
         </v-btn>
       </template>
     </v-snackbar>
@@ -42,24 +38,11 @@
 <script>
 export default {
   data: () => ({
+    title: process.env.CONTACT_TITLE || 'Contact me',
+    paragraph:
+      process.env.CONTACT_PARAGRAPH ||
+      'Submit your message and I will get in touch within one day.',
     icons: ['fa-facebook', 'fa-twitter', 'fa-linkedin', 'fa-instagram'],
-    valid: true,
-    name: '',
-    nameRules: [
-      (v) => !!v || 'O campo nome é obrigatório',
-      (v) => (v && v.length >= 6) || 'O nome precisa ter mais de 6 caracteres',
-    ],
-    email: '',
-    emailRules: [
-      (v) => !!v || 'O campo email é obrigatório',
-      (v) => /.+@.+\..+/.test(v) || 'O E-mail precisa ser válido',
-    ],
-    textArea: '',
-    textAreaRules: [
-      (v) => !!v || 'O campo de texto é obrigatório',
-      (v) => (v && v.length >= 10) || 'Mínimo de 10 caracteres',
-    ],
-    lazy: false,
     snackbar: {
       enabled: false,
       text: '',

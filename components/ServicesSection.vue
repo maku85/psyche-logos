@@ -4,46 +4,34 @@
       <v-row>
         <v-col class="d-flex flex-column align-center">
           <div>
-            <p class="sub-heading">Service offerings</p>
-            <h2>Personal & Individual therapy sessions</h2>
+            <p class="sub-heading">{{ subHeading }}</p>
+            <h2>{{ title }}</h2>
           </div>
         </v-col>
       </v-row>
       <v-row>
         <v-col cols="12" sm="12" md="4">
           <div class="service-item">
-            <h4>Dating & Relationship</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              mauris felis, varius rutrum massa a, dignissim ornare dui. Cras
-              eget velit eu dui tristique lobortis sit amet vel tellus.
-            </p>
+            <h4>{{ serviceTitle1 }}</h4>
+            <p>{{ serviceDescription1 }}</p>
           </div>
         </v-col>
         <v-col cols="12" sm="12" md="4">
           <div class="service-item">
-            <h4>Grief & Loss Consueling</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              mauris felis, varius rutrum massa a, dignissim ornare dui. Cras
-              eget velit eu dui tristique lobortis sit amet vel tellus.
-            </p>
+            <h4>{{ serviceTitle2 }}</h4>
+            <p>{{ serviceDescription2 }}</p>
           </div>
         </v-col>
         <v-col cols="12" sm="12" md="4">
           <div class="service-item">
-            <h4>Self Esteem Therapy</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              mauris felis, varius rutrum massa a, dignissim ornare dui. Cras
-              eget velit eu dui tristique lobortis sit amet vel tellus.
-            </p>
+            <h4>{{ serviceTitle3 }}</h4>
+            <p>{{ serviceDescription3 }}</p>
           </div>
         </v-col>
       </v-row>
       <v-row>
         <v-col class="services-link">
-          <v-btn color="#a57355" to="/services" dark flat>read more</v-btn>
+          <v-btn color="#a57355" to="/services" dark flat>{{ btnLabel }}</v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -53,6 +41,24 @@
 <script>
 export default {
   name: 'ServicesSection',
+  data: () => ({
+    subHeading: process.env.SERVICES_SUB_HEADING || 'Program offerings',
+    title:
+      process.env.SERVICES_TITLE || 'Personal & Individual therapy sessions.',
+    serviceTitle1: process.env.SERVICES_TITLE_1 || 'Dating & Relationshio',
+    serviceDescription1:
+      process.env.SERVICES_DESCRIPTION_1 ||
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere sit amet mi consectetur condimentum. Quisque scelerisque tristique aliquam. Aenean tristique tellus ac ligula bibendum, ut facilisis elit mollis. Fusce vel ligula at magna venenatis venenatis. Phasellus gravida felis sit amet est commodo, porta posuere urna porta.',
+    serviceTitle2: process.env.SERVICES_TITLE_2 || 'Grief & Loss Consueling',
+    serviceDescription2:
+      process.env.SERVICES_DESCRIPTION_2 ||
+      'Etiam tincidunt massa non arcu consectetur aliquet a at nisl. Proin at volutpat lorem. Integer at nunc venenatis odio dapibus mattis et ut turpis.',
+    serviceTitle3: process.env.SERVICES_TITLE_3 || 'Self Esteem Therapy',
+    serviceDescription3:
+      process.env.SERVICES_DESCRIPTION_3 ||
+      'ivamus porta, felis bibendum suscipit viverra, felis eros malesuada ex, id dignissim lorem risus eget nunc. Fusce dapibus leo semper nisl tincidunt suscipit in a nunc. In tristique vehicula sapien non faucibus. Aliquam erat volutpat.',
+    btnLabel: process.env.SERVICES_BTN_LABEL || 'Read more',
+  }),
 }
 </script>
 

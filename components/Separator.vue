@@ -1,15 +1,10 @@
 <template>
   <v-container fluid fill-height justify-center pa-5 class="home-hero">
     <div class="hero-content font-weight-bold white--text text-center">
-      <div class="display-1 font-italic">
-        Susan is a life changer, having magical
-      </div>
+      <div class="display-1 font-italic">{{ title }}</div>
       <div class="display-1 font-italic">skills for helping people with</div>
       <div class="display-1 font-italic">psychotherapy.</div>
-      <p class="subheading font-weight-light mt-5">
-        Amazing therapies and advice to help you achieve your goals and taking
-        important decisions of your life.
-      </p>
+      <p class="subheading font-weight-light mt-5">{{ description }}</p>
     </div>
   </v-container>
 </template>
@@ -17,6 +12,13 @@
 <script>
 export default {
   name: 'SeparatorComponent',
+  data: () => ({
+    title:
+      process.env.SEPARATOR_TITLE || 'Susan is a life changer, having magical',
+    description:
+      process.env.SEPARATOR_DESCRIPTION ||
+      'Amazing therapies and advice to help you achieve your goals and taking important decisions of your life.',
+  }),
 }
 </script>
 

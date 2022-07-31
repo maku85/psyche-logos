@@ -4,22 +4,22 @@
       <v-container pa-8>
         <v-row class="py-8">
           <v-col cols="12" xs="12" sm="5" class="mt-8">
-            <p class="sub-heading">Get in touch</p>
-            <h2>Have queries before the appointment?</h2>
+            <p class="sub-heading">{{ title }}</p>
+            <h2>{{ paragraph }}</h2>
 
             <v-list-item three-line class="mt-4 contact-box-1">
               <v-list-item-icon>
                 <v-icon> mdi-at</v-icon>
               </v-list-item-icon>
               <v-list-item-content>
-                <v-list-item-title class="mb-3 title"
-                  >Let’s Talk</v-list-item-title
-                >
+                <v-list-item-title class="mb-3 title">{{
+                  contactTitle1
+                }}</v-list-item-title>
                 <v-list-item-subtitle>
-                  <strong>Phone:</strong> +1 921-124-9220<br />
+                  <strong>{{ phoneLabel }}:</strong> {{ phone }}<br />
                 </v-list-item-subtitle>
                 <v-list-item-subtitle>
-                  <strong>Email:</strong> hi@psychare.com
+                  <strong>Email:</strong> {{ email }}
                 </v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
@@ -29,12 +29,10 @@
                 <v-icon> mdi-earth</v-icon>
               </v-list-item-icon>
               <v-list-item-content>
-                <v-list-item-title class="mb-3 title"
-                  >Visiting here?</v-list-item-title
-                >
-                <v-list-item-subtitle>
-                  1870 Alpaca Way Irvine,<br />New York, 92614. US
-                </v-list-item-subtitle>
+                <v-list-item-title class="mb-3 title">{{
+                  contactTitle2
+                }}</v-list-item-title>
+                <v-list-item-subtitle v-html="address"></v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
           </v-col>
@@ -55,6 +53,20 @@
 <script>
 export default {
   name: 'ContactPage',
+  data: () => ({
+    title: process.env.CONTACT_PAGE_TITLE || 'Contact me',
+    paragraph:
+      process.env.CONTACT_PAGE_PARAGRAPH ||
+      'Have queries before the appointment?',
+    contactTitle1: process.env.CONTACT_TITLE_1 || 'Let’s Talk',
+    contactTitle2: process.env.CONTACT_TITLE_2 || 'Visiting here?',
+    phoneLabel: process.env.PHONE_LABEL || 'Phone',
+    phone: process.env.PHONE_VALUE || '123-456-7890',
+    email: process.env.EMAIL_VALUE || 'hi@restedminds.com',
+    address:
+      process.env.ADDRESS_VALUE ||
+      '1870 Alpaca Way Irvine, New York, 92614. US',
+  }),
 }
 </script>
 
