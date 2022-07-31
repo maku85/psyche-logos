@@ -5,7 +5,7 @@
         <div class="card-1">
           <h3 class="box-title">{{ helpTitle }}</h3>
           <p class="subheading mt-3">{{ helpParagraph }}</p>
-          <v-btn color="#a47355" dark text to="/services">{{
+          <v-btn color="#a47355" dark text to="#areas">{{
             helpBtnLabel
           }}</v-btn>
         </div>
@@ -14,9 +14,11 @@
       <v-col cols="12" xs="12" sm="6">
         <div class="card-2">
           <h3 class="box-title">{{ contactTitle }}</h3>
-          <div class="d-flex align-center mt-8">
+          <div class="d-flex align-center mt-4">
             <div class="mr-5">
-              <v-icon>mdi-phone</v-icon>
+              <v-btn class="btn-call" large fab dark>
+                <v-icon>mdi-phone</v-icon>
+              </v-btn>
             </div>
             <div>
               <div class="text-dimmer">{{ contactText }}</div>
@@ -53,9 +55,9 @@ export default {
   .card-1,
   .card-2 {
     border-radius: 8px;
-    padding-top: 50px !important;
+    padding-top: 40px !important;
     padding-right: 35px !important;
-    padding-bottom: 50px !important;
+    padding-bottom: 40px !important;
     padding-left: 35px !important;
     box-shadow: 0px 6px 60px 0px rgb(51 51 51 / 10%);
   }
@@ -75,6 +77,10 @@ export default {
 
     i {
       font-size: 50px;
+    }
+
+    .btn-call {
+      background-color: #a47355;
     }
 
     .text-dimmer {

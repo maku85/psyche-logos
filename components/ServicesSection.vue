@@ -1,6 +1,6 @@
 <template>
   <v-content id="services">
-    <v-container class="px-15 py-15" fluid>
+    <v-container class="px-10 py-15" fluid>
       <v-row>
         <v-col class="d-flex flex-column align-center">
           <div>

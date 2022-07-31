@@ -1,9 +1,9 @@
 <template>
-  <v-content id="services">
-    <v-container>
+  <v-content id="areas">
+    <v-container class="px-10 py-15">
       <v-row>
         <v-col cols="12" sm="12" md="6">
-          <div class="px-5 py-15">
+          <div>
             <p class="sub-heading">{{ subHeading }}</p>
             <h2>{{ heading }}</h2>
             <p>{{ paragraph }}</p>
@@ -12,30 +12,15 @@
         </v-col>
 
         <v-col cols="12" sm="12" md="6">
-          <v-layout row wrap class="px-5 py-15 mt-4">
-            <v-flex sm12 md6 class="service-block">
-              <h4 class="mb-3">
-                <v-icon color="#a57355">mdi-star</v-icon> {{ approachTitle1 }}
-              </h4>
-              <p>{{ approachDescription1 }}</p>
-            </v-flex>
-            <v-flex sm12 md6 class="service-block">
-              <h4 class="mb-3">
-                <v-icon color="#a57355">mdi-star</v-icon> {{ approachTitle2 }}
-              </h4>
-              <p>{{ approachDescription2 }}</p>
-            </v-flex>
-            <v-flex sm12 md6 class="service-block">
-              <h4 class="mb-3">
-                <v-icon color="#a57355">mdi-star</v-icon> {{ approachTitle3 }}
-              </h4>
-              <p>{{ approachDescription3 }}</p>
-            </v-flex>
-            <v-flex sm12 md6 class="service-block">
-              <h4 class="mb-3">
-                <v-icon color="#a57355">mdi-star</v-icon> {{ approachTitle4 }}
-              </h4>
-              <p>{{ approachDescription4 }}</p>
+          <v-layout row wrap>
+            <v-flex
+              v-for="(approach, i) in approaches"
+              :key="i"
+              sm12
+              md6
+              class="service-block"
+            >
+              <h4><v-icon color="#a57355">mdi-star</v-icon> {{ approach }}</h4>
             </v-flex>
           </v-layout>
         </v-col>
@@ -55,28 +40,15 @@ export default {
       process.env.APPROACH_PARAGRAPH ||
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua minim veniam.',
     btnLabel: process.env.APPROACH_BTN_LABEL || 'read more',
-    approachTitle1: process.env.APPROACH_TITLE_1 || 'Adults',
-    approachDescription1:
-      process.env.APPROACH_DESCRIPTION_1 ||
-      'Life-changing sessions for adults, no matter what age group they belong to.',
-    approachTitle2: process.env.APPROACH_TITLE_2 || 'Family',
-    approachDescription2:
-      process.env.APPROACH_DESCRIPTION_2 ||
-      'A special session for your kids regarding personal problems and study.',
-    approachTitle3: process.env.APPROACH_TITLE_3 || 'Children',
-    approachDescription3:
-      process.env.APPROACH_DESCRIPTION_3 ||
-      'Join me with your family and we’ll dicuss your issues to make your bonds better.',
-    approachTitle4: process.env.APPROACH_TITLE_4 || 'Business',
-    approachDescription4:
-      process.env.APPROACH_DESCRIPTION_4 ||
-      'Arrange a business session for your organization to boost the outcome.',
+    approaches: (
+      process.env.APPROACHES || 'Adults, Family, Children, Business'
+    ).split(','),
   }),
 }
 </script>
 
 <style lang="scss" scoped>
-#services {
+#areas {
   background-color: #151110;
   border-top: 5px solid #a47355;
   color: #fff;

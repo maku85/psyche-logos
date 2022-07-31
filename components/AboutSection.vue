@@ -1,15 +1,13 @@
 <template>
   <v-container id="about" fluid grid-list-lg>
-    <v-container>
+    <v-container class="px-10 py-15">
       <v-layout row wrap>
         <v-flex sm12 md6 class="about-details">
-          <div class="px-5 py-15">
-            <p class="sub-heading">{{ subHeading }}</p>
-            <h3 v-html="heading"></h3>
-            <p>{{ paragraph1 }}</p>
-            <p>{{ paragraph2 }}</p>
-            <v-btn color="#a47355" text to="/about">{{ btnLabel }} ></v-btn>
-          </div>
+          <p class="sub-heading">{{ subHeading }}</p>
+          <h3 v-html="heading"></h3>
+          <p>{{ paragraph1 }}</p>
+          <p>{{ paragraph2 }}</p>
+          <v-btn color="#a57355" to="/about" dark flat>{{ btnLabel }}</v-btn>
         </v-flex>
 
         <v-flex sm12 md6 class="about-image hidden-sm-and-down">

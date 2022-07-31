@@ -1,22 +1,26 @@
 <template>
   <section id="contact">
-    <v-container>
-      <v-row class="d-flex" align-items="center">
-        <v-col cols="12" sm="5" class="mt-8">
-          <h3>{{ title }}</h3>
-          <p>{{ paragraph }}</p>
-        </v-col>
+    <v-container class="px-10 py-15">
+      <div class="contact-card">
+        <v-row class="d-flex" align-items="center">
+          <v-col cols="12" sm="5" class="px-10 py-15">
+            <h3>{{ title }}</h3>
+            <p>{{ paragraph }}</p>
+          </v-col>
 
-        <v-col cols="12" sm="7">
-          <div class="contact-box text-center">
-            <contact-form></contact-form>
-          </div>
-        </v-col>
-      </v-row>
+          <v-col cols="12" sm="7" class="py-0">
+            <div class="contact-box text-center">
+              <contact-form class="py-5"></contact-form>
+            </div>
+          </v-col>
+        </v-row>
+      </div>
     </v-container>
+
     <div class="svg-border-waves text-white">
       <v-img src="~@/assets/img/borderWavesBlue.svg" />
     </div>
+
     <v-snackbar
       v-model="snackbar.enabled"
       timeout="3000"
@@ -89,6 +93,12 @@ export default {
   p {
     font-size: 15px;
     color: #666;
+  }
+
+  .contact-card {
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0px 6px 60px 0px rgb(51 51 51 / 10%);
   }
 
   .svg-border-waves .v-image {
