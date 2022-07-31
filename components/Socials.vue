@@ -23,10 +23,6 @@ export default {
         link: '',
       },
       {
-        text: 'mdi-twitter',
-        link: '',
-      },
-      {
         text: 'mdi-linkedin',
         link: '',
       },
