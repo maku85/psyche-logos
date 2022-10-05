@@ -2,7 +2,7 @@
   <v-content id="areas">
     <v-container class="px-10 py-15">
       <v-row>
-        <v-col cols="12" sm="12" md="6">
+        <v-col cols="12" sm="12" md="5" class="mr-10">
           <div>
             <p class="sub-heading">{{ subHeading }}</p>
             <h2>{{ heading }}</h2>
@@ -20,7 +20,9 @@
               md6
               class="service-block"
             >
-              <h4><v-icon color="#a57355">mdi-star</v-icon> {{ approach }}</h4>
+              <h4>
+                <v-icon color="#a57355">mdi-circle-small</v-icon> {{ approach }}
+              </h4>
             </v-flex>
           </v-layout>
         </v-col>
@@ -42,7 +44,7 @@ export default {
     btnLabel: process.env.APPROACH_BTN_LABEL || 'read more',
     approaches: (
       process.env.APPROACHES || 'Adults, Family, Children, Business'
-    ).split(','),
+    ).split(';'),
   }),
 }
 </script>
@@ -107,10 +109,8 @@ export default {
     h4 {
       font-size: 19px;
       color: #fff;
-      font-weight: 600;
+      font-weight: 500;
       margin-top: 0;
-      padding-bottom: 8px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     p {

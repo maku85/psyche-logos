@@ -75,7 +75,10 @@
       <div class="secondary-header hidden-sm-and-down">
         <v-container>
           <v-row class="d-flex align-center">
-            <div>{{ phone }} | {{ email }}</div>
+            <div>
+              <a :href="`tel:${phoneValue}`">{{ phone }}</a> |
+              <a :href="`mailto:${email}`">{{ email }}</a>
+            </div>
             <v-spacer></v-spacer>
             <socials></socials>
           </v-row>
@@ -134,13 +137,14 @@ export default {
       {
         icon: 'mdi-email-outline',
         text: process.env.NAV_CONTACTS_LABEL || 'Contacts',
-        link: '/contact',
+        link: '#contact',
       },
     ],
     contactTitle1: process.env.CONTACT_TITLE_1 || 'Let’s Talk',
     contactTitle2: process.env.CONTACT_TITLE_2 || 'Visiting here?',
     phoneLabel: process.env.PHONE_LABEL || 'Phone',
-    phone: process.env.PHONE_VALUE || '123-456-7890',
+    phone: process.env.PHONE_LABEL_VALUE || '123-456-7890',
+    phoneValue: process.env.PHONE_VALUE || '123-456-7890',
     email: process.env.EMAIL_VALUE || 'hi@restedminds.com',
     address:
       process.env.ADDRESS_VALUE ||
@@ -197,6 +201,11 @@ header {
     background: rgba(243, 235, 230, 1);
     padding: 6px 0;
     font-size: 14px;
+
+    a {
+      color: #5f5f5f;
+      text-decoration: none;
+    }
   }
 
   .container {

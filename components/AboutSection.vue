@@ -5,8 +5,7 @@
         <v-flex sm12 md6 class="about-details">
           <p class="sub-heading">{{ subHeading }}</p>
           <h3 v-html="heading"></h3>
-          <p>{{ paragraph1 }}</p>
-          <p>{{ paragraph2 }}</p>
+          <p v-html="paragraph"></p>
           <v-btn color="#a57355" to="/about" dark flat>{{ btnLabel }}</v-btn>
         </v-flex>
 
@@ -29,11 +28,8 @@ export default {
     heading:
       process.env.ABOUT_HEADING ||
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua minim veniam.',
-    paragraph1:
-      process.env.ABOUT_PARAGRAPH_1 ||
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua minim veniam.',
-    paragraph2:
-      process.env.ABOUT_PARAGRAPH_2 ||
+    paragraph:
+      process.env.ABOUT_PARAGRAPH ||
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua minim veniam.',
     btnLabel: process.env.ABOUT_BTN_LABEL || 'about me',
   }),

@@ -16,13 +16,15 @@
           <h3 class="box-title">{{ contactTitle }}</h3>
           <div class="d-flex align-center mt-4">
             <div class="mr-5">
-              <v-btn class="btn-call" large fab dark>
+              <v-btn class="btn-call" large fab dark depressed>
                 <v-icon>mdi-phone</v-icon>
               </v-btn>
             </div>
             <div>
               <div class="text-dimmer">{{ contactText }}</div>
-              <div class="text-phone">{{ phone }}</div>
+              <div class="text-phone">
+                <a :href="`tel:${phoneValue}`">{{ phone }}</a>
+              </div>
             </div>
           </div>
         </div>
@@ -42,7 +44,8 @@ export default {
     helpBtnLabel: process.env.CARD_HELP_BTN_LABEL || 'Explore services',
     contactTitle: process.env.CARD_CONTACT_TITLE || 'Call for Consultation',
     contactText: process.env.CARD_CONTACT_TEXT || 'Dial now',
-    phone: process.env.PHONE_VALUE || '123-456-7890',
+    phone: process.env.PHONE_LABEL_VALUE || '123-456-7890',
+    phoneValue: process.env.PHONE_VALUE || '123-456-7890',
   }),
 }
 </script>
@@ -51,6 +54,7 @@ export default {
 #approach {
   margin-top: -120px;
   color: #5f5f5f;
+  position: relative;
 
   .card-1,
   .card-2 {
@@ -98,7 +102,11 @@ export default {
       font-size: 23px;
       line-height: 30px;
       font-weight: 800;
-      color: #fff;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
     }
   }
 

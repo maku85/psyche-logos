@@ -15,11 +15,19 @@
             <p v-html="paragraph1"></p>
           </v-col>
         </v-row>
+
         <v-row>
           <v-col>
             <p class="sub-heading">{{ subHeading2 }}</p>
             <div class="display-1 pb-4">{{ title2 }}</div>
             <p v-html="paragraph2"></p>
+          </v-col>
+        </v-row>
+
+        <v-row>
+          <v-col>
+            <p class="sub-heading">{{ subHeading3 }}</p>
+            <div class="display-1 pb-4">{{ title3 }}</div>
 
             <div class="timeline single">
               <div class="timeline-item">
@@ -64,6 +72,8 @@ export default {
     paragraph2:
       process.env.ABOUT_PAGE_PARAGRAPH_2 ||
       '<p>Donec fringilla felis ac eros feugiat fermentum. Proin euismod fermentum sem, nec pretium nulla tristique at. Suspendisse eleifend ipsum sed turpis imperdiet, at feugiat orci aliquet. Quisque eget risus libero. Donec eu urna tincidunt, vestibulum quam eget, tristique magna. Suspendisse non elit odio. Duis ornare ac eros et facilisis. Praesent lobortis quam tellus. Aenean vitae orci quis lorem rhoncus tincidunt non quis nibh. Nulla tempus, arcu id commodo viverra, odio mauris posuere velit, id placerat nisi libero vitae leo. Nunc placerat justo vel nibh mollis volutpat. In quis nulla quis nunc mollis imperdiet laoreet sed ex. Donec fermentum scelerisque elit, ac dignissim urna dapibus eget. Suspendisse magna mauris, volutpat id purus sed, vehicula congue neque.</p><p>Vivamus malesuada iaculis ligula, ac bibendum nisi sodales ac. Ut sit amet blandit sem, a accumsan purus. Etiam nisi ante, porta mollis ornare quis, placerat a lorem. Morbi vitae tortor nec turpis feugiat tincidunt. In ut ipsum at ipsum lacinia volutpat. Nunc consequat sit amet lectus vel ornare. Pellentesque ante orci, iaculis a gravida ut, pharetra eget est. Phasellus odio velit, sagittis sit amet nulla porttitor, iaculis porta leo. Nullam quis vehicula ante, non vehicula erat. Cras arcu turpis, tristique et purus in, tempus elementum odio. In hac habitasse platea dictumst. Sed quam metus, malesuada ut tempus a, tincidunt sit amet sem. Aliquam eu suscipit magna. Fusce ligula ipsum, vestibulum et sagittis quis, venenatis id urna. Donec finibus mauris at ipsum sodales rhoncus.</p>',
+    subHeading3: process.env.ABOUT_PAGE_SUB_HEADING_3 || 'My career',
+    title3: process.env.ABOUT_PAGE_TITLE_3 || 'Experiences',
     experienceTitle1:
       process.env.ABOUT_PAGE_EXPERIENCE_TITLE_1 || 'Experience 1',
     experienceDescription1:
