@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-content>
     <home-hero></home-hero>
     <areas-section></areas-section>
     <about-section></about-section>
@@ -7,7 +7,9 @@
     <services-section></services-section>
     <separator></separator>
     <contact-section></contact-section>
-  </div>
+
+    <scroll-to-top></scroll-to-top>
+  </v-content>
 </template>
 
 <script>

@@ -1,35 +1,46 @@
 <template>
   <v-container id="approach">
-    <v-row>
-      <v-col cols="12" xs="6" sm="6">
-        <div class="card-1">
-          <h3 class="box-title">{{ helpTitle }}</h3>
-          <p class="subheading mt-3">{{ helpParagraph }}</p>
-          <v-btn color="#a47355" dark text to="#areas">{{
-            helpBtnLabel
-          }}</v-btn>
-        </div>
-      </v-col>
+    <v-container class="section-content">
+      <v-row class="align-center">
+        <v-col cols="12" xs="12" sm="7">
+          <div class="card-1">
+            <h3 class="box-title font-weight-bold">{{ helpTitle }}</h3>
+            <p class="subheading mt-3">{{ helpParagraph }}</p>
+            <v-btn
+              class="font-weight-bold"
+              color="accent"
+              dark
+              text
+              to="#areas"
+              >{{ helpBtnLabel }}</v-btn
+            >
+          </div>
+        </v-col>
 
-      <v-col cols="12" xs="12" sm="6">
-        <div class="card-2">
-          <h3 class="box-title">{{ contactTitle }}</h3>
-          <div class="d-flex align-center mt-4">
-            <div class="mr-5">
-              <v-btn class="btn-call" large fab dark depressed>
-                <v-icon>mdi-phone</v-icon>
-              </v-btn>
-            </div>
-            <div>
-              <div class="text-dimmer">{{ contactText }}</div>
-              <div class="text-phone">
-                <a :href="`tel:${phoneValue}`">{{ phone }}</a>
+        <v-col cols="12" xs="12" sm="5">
+          <div class="card-2">
+            <h3
+              class="box-title font-weight-bold light-border-bottom white--text"
+            >
+              {{ contactTitle }}
+            </h3>
+            <div class="d-flex align-center mt-4">
+              <div class="mr-5">
+                <v-btn color="accent" large fab dark depressed>
+                  <v-icon>mdi-phone</v-icon>
+                </v-btn>
+              </div>
+              <div>
+                <div class="text-dimmer">{{ contactText }}</div>
+                <div class="text-phone font-weight-bold">
+                  <a :href="`tel:${phoneValue}`">{{ phone }}</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </v-col>
-    </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-container>
 </template>
 
@@ -59,9 +70,9 @@ export default {
   .card-1,
   .card-2 {
     border-radius: 8px;
-    padding-top: 40px !important;
+    padding-top: 50px !important;
     padding-right: 35px !important;
-    padding-bottom: 40px !important;
+    padding-bottom: 50px !important;
     padding-left: 35px !important;
     box-shadow: 0px 6px 60px 0px rgb(51 51 51 / 10%);
   }
@@ -72,7 +83,7 @@ export default {
 
   .card-2 {
     color: #fff;
-    background: #6f4839;
+    background: var(--dark-accent);
     opacity: 0.9;
 
     p {
@@ -80,28 +91,12 @@ export default {
     }
 
     i {
-      font-size: 50px;
-    }
-
-    .btn-call {
-      background-color: #a47355;
-    }
-
-    .text-dimmer {
-      color: #fff;
-      font-weight: bold;
-      font-size: 15px;
-      letter-spacing: 1px;
-      margin-bottom: 0;
-      margin-top: 5px;
-      opacity: 0.7;
-      text-transform: uppercase;
+      font-size: 40px;
     }
 
     .text-phone {
       font-size: 23px;
       line-height: 30px;
-      font-weight: 800;
 
       a {
         text-decoration: none;
@@ -112,7 +107,9 @@ export default {
 
   .box-title {
     font-size: 23px;
-    padding-bottom: 20px;
+  }
+
+  .light-border-bottom {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 }

@@ -1,12 +1,19 @@
 <template>
-  <v-container id="about" fluid grid-list-lg>
-    <v-container class="px-10 py-15">
+  <v-container id="about" class="section">
+    <v-container class="section-content">
       <v-layout row wrap>
         <v-flex sm12 md6 class="about-details">
           <p class="sub-heading">{{ subHeading }}</p>
-          <h3 v-html="heading"></h3>
+          <h2 class="font-weight-bold" v-html="heading"></h2>
           <p v-html="paragraph"></p>
-          <v-btn color="#a57355" to="/about" dark flat>{{ btnLabel }}</v-btn>
+          <v-btn
+            class="font-weight-bold"
+            color="accent"
+            to="/about"
+            dark
+            text
+            >{{ btnLabel }}</v-btn
+          >
         </v-flex>
 
         <v-flex sm12 md6 class="about-image hidden-sm-and-down">
@@ -41,54 +48,6 @@ export default {
   background: url('/brush-effect-1-1.png');
   background-size: 100%;
   padding: 100px 0;
-  color: #5f5f5f;
-
-  .sub-heading {
-    font-size: 14px;
-    color: #a47355;
-    line-height: 1.2;
-    text-align: left;
-    font-weight: 800;
-    padding-left: 88px;
-    letter-spacing: 1.2px;
-    position: relative;
-    text-transform: uppercase;
-    margin-top: 0;
-    &:before {
-      content: '';
-      position: absolute;
-      height: 6px;
-      width: 6px;
-      border-radius: 50%;
-      background: #a47355;
-      left: 0;
-      top: 6px;
-    }
-    &:after {
-      content: '';
-      position: absolute;
-      background: #a47355;
-      top: 8px;
-      left: 14px;
-      height: 2px;
-      opacity: 1;
-      width: 50px;
-      opacity: 0.5;
-    }
-  }
-
-  h3 {
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 1.3em;
-    margin-bottom: 33px;
-    color: #1f1f1f;
-  }
-
-  p {
-    font-size: 15px;
-    color: #5f5f5f;
-  }
 
   .v-image {
     margin: auto;

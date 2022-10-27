@@ -9,6 +9,7 @@
       column
       pa-5
       class="
+        section-content
         centered-content
         hero-heading
         display-2
@@ -16,7 +17,7 @@
         white--text
       "
     >
-      <p class="sub-heading">{{ subHeading2 }}</p>
+      <p class="white-sub-heading">{{ subHeading2 }}</p>
       <div v-html="heading1"></div>
       <div v-html="heading2"></div>
       <!-- <div class="hero-heading display-2 font-weight-bold">
@@ -73,40 +74,6 @@ export default {
 
   .centered-content {
     position: relative;
-  }
-}
-
-.sub-heading {
-  font-size: 14px;
-  color: #fff;
-  line-height: 1.2;
-  text-align: left;
-  font-weight: 800;
-  padding-left: 88px;
-  letter-spacing: 1.2px;
-  position: relative;
-  text-transform: uppercase;
-  margin-top: 0;
-  &:before {
-    content: '';
-    position: absolute;
-    height: 6px;
-    width: 6px;
-    border-radius: 50%;
-    background: #fff;
-    left: 0;
-    top: 6px;
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    background: #fff;
-    top: 8px;
-    left: 14px;
-    height: 2px;
-    opacity: 1;
-    width: 50px;
-    opacity: 0.5;
   }
 }
 

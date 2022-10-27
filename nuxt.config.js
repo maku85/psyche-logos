@@ -1,5 +1,3 @@
-import colors from 'vuetify/es5/util/colors'
-
 export default {
   ssr: false,
   target: 'static',
@@ -16,9 +14,9 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  router: {
-    base: '/psyche-logos/',
-  },
+  // router: {
+  //   base: '/psyche-logos/',
+  // },
 
   components: true,
 
@@ -29,10 +27,15 @@ export default {
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/google-fonts',
+    '@nuxtjs/style-resources',
     '@nuxtjs/vuetify',
   ],
 
   css: [],
+
+  styleResources: {
+    scss: ['~/assets/variables.scss', '~/assets/scss/main.scss'],
+  },
 
   googleFonts: {
     families: {
@@ -51,14 +54,27 @@ export default {
     theme: {
       dark: false,
       themes: {
+        light: {
+          primary: {
+            base: '#4caf50',
+          },
+          secondary: {
+            base: '#ff8c00',
+          },
+          accent: {
+            base: '#a47355',
+          },
+        },
         dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
+          primary: {
+            base: '#4caf50',
+          },
+          secondary: {
+            base: '#ff8c00',
+          },
+          accent: {
+            base: '#a47355',
+          },
         },
       },
     },

@@ -1,6 +1,6 @@
 <template>
   <section id="contact">
-    <v-container fluid class="">
+    <v-container class="section-content">
       <section id="contact">
         <v-container>
           <v-row class="contact-card">
@@ -128,42 +128,8 @@ export default {
   background: url(http://www.slashcreative.co/themes/psychare/wp-content/uploads/2020/11/form-bg-pattern.png?id=432);
   padding: 100px 0;
 
-  .sub-heading {
-    font-size: 14px;
-    color: #a47355;
-    line-height: 1.2;
-    text-align: left;
-    font-weight: 800;
-    padding-left: 88px;
-    letter-spacing: 1.2px;
-    position: relative;
-    text-transform: uppercase;
-    margin-top: 0;
-    &:before {
-      content: '';
-      position: absolute;
-      height: 6px;
-      width: 6px;
-      border-radius: 50%;
-      background: #a47355;
-      left: 0;
-      top: 6px;
-    }
-    &:after {
-      content: '';
-      position: absolute;
-      background: #a47355;
-      top: 8px;
-      left: 14px;
-      height: 2px;
-      opacity: 1;
-      width: 50px;
-      opacity: 0.5;
-    }
-  }
-
   i {
-    color: #a47355;
+    color: var(--accent);
     font-size: 42px;
   }
 
@@ -190,13 +156,6 @@ export default {
     position: relative;
   }
 
-  h3 {
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 1.3em;
-    margin-bottom: 33px;
-  }
-
   h4 {
     font-size: 24px;
     margin-bottom: 5px;
@@ -205,7 +164,6 @@ export default {
 
   p {
     font-style: italic;
-    color: #5f5f5f;
   }
 
   .contact-card {

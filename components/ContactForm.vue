@@ -32,7 +32,7 @@
       color="#a57355"
       :dark="valid"
       block
-      flat
+      text
       class="mt-3"
       @click="submit"
     >

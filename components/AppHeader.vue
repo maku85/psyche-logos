@@ -85,8 +85,8 @@
         </v-container>
       </div>
 
-      <v-toolbar flat height="100px">
-        <v-container class="d-flex align-center">
+      <v-toolbar text height="100px">
+        <v-container class="d-flex align-center section-content">
           <div class="header-logo-wrap">
             <NuxtLink to="/">
               <logo class="header-logo"></logo>
@@ -160,7 +160,7 @@ export default {
       if (prevScrollpos > currentScrollPos) {
         document.getElementById('navigation').style.top = '0'
       } else {
-        document.getElementById('navigation').style.top = '-120px'
+        document.getElementById('navigation').style.top = '-150px'
       }
       prevScrollpos = currentScrollPos
     }
@@ -169,15 +169,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-header {
-  background: #fff;
-}
-
-// #cb997e // box 1
-// #b7b7a4 // box 2
-
-// #4c3935 // box text color
-
 .drawer-content {
   height: 100%;
 
@@ -186,7 +177,7 @@ header {
   }
 
   .contact-box i {
-    color: #a47355;
+    color: var(--accent);
     font-size: 32px;
   }
 }
@@ -226,7 +217,7 @@ header {
       &.nuxt-link-exact-active {
         font-weight: bold;
         position: relative;
-        color: #a67355;
+        color: var(--accent);
 
         &:after {
           content: '';

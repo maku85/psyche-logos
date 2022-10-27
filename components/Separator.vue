@@ -2,8 +2,6 @@
   <v-container fluid fill-height justify-center pa-5 class="home-hero">
     <div class="hero-content font-weight-bold white--text text-center">
       <div class="display-1 font-italic">{{ title }}</div>
-      <div class="display-1 font-italic">skills for helping people with</div>
-      <div class="display-1 font-italic">psychotherapy.</div>
       <p class="subheading font-weight-light mt-5">{{ description }}</p>
     </div>
   </v-container>
