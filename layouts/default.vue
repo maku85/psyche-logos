@@ -2,25 +2,18 @@
   <v-app>
     <app-header></app-header>
 
-    <v-content transition="slide-x-transition">
-      <v-main class="main-container">
-        <Nuxt />
-      </v-main>
-    </v-content>
+    <v-main class="main-container">
+      <NuxtPage />
+    </v-main>
 
     <app-footer></app-footer>
+    <scroll-to-top></scroll-to-top>
   </v-app>
 </template>
 
-<script>
-export default {
-  name: 'DefaultLayout',
-}
-</script>
-
 <style lang="scss" scoped>
 .main-container {
-  margin-top: 150px;
+  margin-top: 120px;
 }
 
 @media only screen and (max-width: 576px) {

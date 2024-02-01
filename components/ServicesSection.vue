@@ -1,35 +1,38 @@
 <template>
-  <v-content id="services" class="section">
+  <section id="services" class="section">
     <v-container class="px-10 py-15 section-content">
       <v-row>
-        <v-col class="d-flex flex-column align-center">
-          <div>
+        <v-col>
+          <div class="d-flex flex-column align-center">
             <p class="sub-heading">{{ subHeading }}</p>
             <h2>{{ title }}</h2>
           </div>
         </v-col>
       </v-row>
-      <v-row>
+      <v-row class="d-flex">
         <v-col
+          class="flex-self-stretch"
           v-for="(service, i) in services"
           :key="i"
           cols="12"
           sm="12"
           md="4"
         >
-          <div class="service-item">
-            <h4>{{ service.title }}</h4>
+          <div class="service-item fill-height">
+            <h4 class="service-title">{{ service.title }}</h4>
             <p>{{ service.description }}</p>
           </div>
         </v-col>
       </v-row>
       <v-row>
         <v-col class="services-link">
-          <v-btn color="accent" to="/services" dark text>{{ btnLabel }}</v-btn>
+          <v-btn color="accent" to="/services" variant="flat">{{
+            btnLabel
+          }}</v-btn>
         </v-col>
       </v-row>
     </v-container>
-  </v-content>
+  </section>
 </template>
 
 <script>
@@ -69,6 +72,8 @@ export default {
   h2 {
     font-size: 33px;
     line-height: 43px;
+    margin-bottom: 50px !important;
+    font-weight: 700 !important;
   }
 
   .service-item {
@@ -76,6 +81,10 @@ export default {
     border: 1px solid #eee;
     box-shadow: 0px 6px 60px 0px rgb(31 31 31 / 5%);
     padding: 20px 40px;
+
+    .service-title {
+      font-weight: 700;
+    }
   }
 
   .services-link {

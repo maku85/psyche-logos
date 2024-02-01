@@ -2,13 +2,9 @@
   <v-fab-transition>
     <v-btn
       v-show="scY > 300"
-      id="pagetop"
+      id="page-top"
       color="accent"
-      dark
-      fixed
-      bottom
-      right
-      fab
+      rounded
       @click="toTop"
     >
       <v-icon>mdi-chevron-up</v-icon>
@@ -43,3 +39,13 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+#page-top {
+  position: fixed;
+  height: 40px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+</style>

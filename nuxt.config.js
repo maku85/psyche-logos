@@ -1,40 +1,56 @@
-export default {
-  ssr: false,
-  target: 'static',
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
-  head: {
-    title: 'Rested minds',
-    htmlAttrs: { lang: 'it' },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'My personal site' },
-      { name: 'format-detection', content: 'telephone=no' },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+export default defineNuxtConfig({
+  devtools: { enabled: true },
+  build: {
+    transpile: ['vuetify'],
+  },
+
+  app: {
+    head: {
+      title: 'Rested minds',
+      htmlAttrs: { lang: 'it' },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'My personal site',
+        },
+        { name: 'format-detection', content: 'telephone=no' },
+      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    },
   },
 
   // router: {
   //   base: '/psyche-logos/',
   // },
 
-  components: true,
-
-  plugins: [],
-
-  modules: ['@nuxtjs/dotenv', '@nuxtjs/recaptcha'],
-
-  buildModules: [
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/google-fonts',
-    '@nuxtjs/style-resources',
-    '@nuxtjs/vuetify',
+  modules: [
+    (_options, nuxt) => {
+      nuxt.hooks.hook('vite:extendConfig', (config) => {
+        // @ts-expect-error
+        config.plugins.push(vuetify({ autoImport: true }))
+      })
+    },
   ],
 
-  css: [],
-
-  styleResources: {
-    scss: ['~/assets/variables.scss', '~/assets/scss/main.scss'],
+  css: ['@mdi/font/css/materialdesignicons.min.css', '~/assets/scss/main.scss'],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "~/assets/variables.scss" as *;',
+        },
+      },
+    },
+    vue: {
+      template: {
+        transformAssetUrls,
+      },
+    },
   },
 
   googleFonts: {
@@ -51,33 +67,6 @@ export default {
         family: 'Mulish',
       },
     },
-    theme: {
-      dark: false,
-      themes: {
-        light: {
-          primary: {
-            base: '#4caf50',
-          },
-          secondary: {
-            base: '#ff8c00',
-          },
-          accent: {
-            base: '#a47355',
-          },
-        },
-        dark: {
-          primary: {
-            base: '#4caf50',
-          },
-          secondary: {
-            base: '#ff8c00',
-          },
-          accent: {
-            base: '#a47355',
-          },
-        },
-      },
-    },
   },
 
   recaptcha: {
@@ -85,4 +74,4 @@ export default {
     siteKey: '6Lf1pAAeAAAAAGKi7fABPEt-hG1Nmo_cYtCcy7Mf',
     version: 3,
   },
-}
+})

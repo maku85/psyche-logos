@@ -1,40 +1,26 @@
 <template>
-  <v-container fluid fill-height class="home-hero">
+  <v-parallax
+    class="home-hero"
+    height="70vh"
+    src="https://images.unsplash.com/photo-1461468611824-46457c0e11fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+  >
     <div class="overlay"></div>
 
     <v-container
-      d-flex
-      flex-column
-      justify-center
-      column
-      pa-5
-      class="
-        section-content
-        centered-content
-        hero-heading
-        display-2
-        font-weight-bold
-        white--text
-      "
+      class="d-flex flex-column fill-height align-start justify-center pa-5 hero-heading"
     >
       <p class="white-sub-heading">{{ subHeading2 }}</p>
-      <div v-html="heading1"></div>
-      <div v-html="heading2"></div>
-      <!-- <div class="hero-heading display-2 font-weight-bold">
-          {{ heading3 }}
-        </div> -->
-      <!-- <p class="hero-subheading mt-5" style="max-width: 500px">
-          {{ subHeading }}
-        </p> -->
+      <h1 v-html="heading1"></h1>
+      <h1 v-html="heading2"></h1>
     </v-container>
-  </v-container>
+  </v-parallax>
 </template>
 
 <script>
 export default {
   name: 'HomeHero',
   data: () => ({
-    subHeading2: process.env.HERO_SUB_HEADING || 'MY PRACTICE',
+    subHeading2: process.env.HERO_SUB_HEADING || 'Lorem ipsum dolor',
     heading1: process.env.HERO_HEADING_1 || 'Lorem ipsum dolor sit amet,',
     heading2: process.env.HERO_HEADING_2 || 'consectetur adipiscing elit,',
     heading3:
@@ -48,38 +34,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home-hero {
-  background: url('https://images.unsplash.com/photo-1461468611824-46457c0e11fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
-  background-size: cover;
+.overlay {
+  height: 100%;
   width: 100%;
-  max-height: 500px;
-  height: 100vh;
-  position: relative;
-
-  .overlay {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding-left: 0;
-    display: inline-block;
-    margin: 0 auto;
-    background: linear-gradient(
-      90deg,
-      rgb(21, 17, 16, 0.6) 0%,
-      rgba(21, 17, 16, 0.4) 100%
-    );
-  }
-
-  .centered-content {
-    position: relative;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(21, 17, 16, 0.8) 0%,
+    rgba(21, 17, 16, 0.6) 100%
+  );
 }
 
 .hero-heading {
+  color: #fff;
   transition: 1s ease-in-out;
   animation: fade 1s;
+  max-width: 1200px !important;
+
+  h1 {
+    z-index: 999;
+  }
 }
 
 .hero-subheading {

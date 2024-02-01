@@ -25,9 +25,3 @@
     </g>
   </svg>
 </template>
-
-<script>
-export default {
-  name: 'LogoComponent',
-}
-</script>

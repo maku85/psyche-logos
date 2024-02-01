@@ -1,3 +1,38 @@
+<script setup lang="ts">
+const drawer = ref()
+const items = ref([
+  {
+    icon: 'mdi-home-outline',
+    text: process.env.NAV_HOME_LABEL || 'Home',
+    link: '/',
+  },
+  {
+    icon: 'mdi-information-outline',
+    text: process.env.NAV_ABOUT_LABEL || 'About',
+    link: '/about',
+  },
+  {
+    icon: 'mdi-ballot-outline',
+    text: process.env.NAV_SERVICES_LABEL || 'Services',
+    link: '/services',
+  },
+  {
+    icon: 'mdi-email-outline',
+    text: process.env.NAV_CONTACTS_LABEL || 'Contacts',
+    link: '#contact',
+  },
+])
+const contactTitle1 = ref(process.env.CONTACT_TITLE_1 || 'Let’s Talk')
+const contactTitle2 = ref(process.env.CONTACT_TITLE_2 || 'Visiting here?')
+const phoneLabel = ref(process.env.PHONE_LABEL || 'Phone')
+const phone = ref(process.env.PHONE_LABEL_VALUE || '123-456-7890')
+const phoneValue = ref(process.env.PHONE_VALUE || '123-456-7890')
+const email = ref(process.env.EMAIL_VALUE || 'hi@restedminds.com')
+const address = ref(
+  process.env.ADDRESS_VALUE || '1870 Alpaca Way Irvine, New York, 92614. US',
+)
+</script>
+
 <template>
   <div>
     <v-navigation-drawer v-model="drawer" :width="325" app temporary>
@@ -71,10 +106,15 @@
       </div>
     </v-navigation-drawer>
 
-    <nav id="navigation">
-      <div class="secondary-header hidden-sm-and-down">
-        <v-container>
-          <v-row class="d-flex align-center">
+    <v-app-bar
+      id="navigation"
+      :elevation="0"
+      scroll-behavior="hide"
+      height="100px"
+    >
+      <v-toolbar height="40" extension-height="80">
+        <v-container class="pa-2 secondary-header hidden-sm-and-down" fluid>
+          <v-row class="px-4 d-flex align-center">
             <div>
               <a :href="`tel:${phoneValue}`">{{ phone }}</a> |
               <a :href="`mailto:${email}`">{{ email }}</a>
@@ -83,90 +123,39 @@
             <socials></socials>
           </v-row>
         </v-container>
-      </div>
 
-      <v-toolbar text height="100px">
-        <v-container class="d-flex align-center section-content">
-          <div class="header-logo-wrap">
-            <NuxtLink to="/">
-              <logo class="header-logo"></logo>
-            </NuxtLink>
-          </div>
-          <v-spacer />
+        <template v-slot:extension>
+          <v-container class="primary-header">
+            <v-row class="d-flex align-center justify-center">
+              <div class="header-logo-wrap">
+                <NuxtLink to="/">
+                  <logo class="header-logo"></logo>
+                </NuxtLink>
+              </div>
+              <v-spacer />
 
-          <div class="hidden-sm-and-down">
-            <NuxtLink
-              v-for="({ text, link }, i) in items"
-              :key="i"
-              :to="link"
-              class="menu-item mr-4"
-            >
-              {{ text }}
-            </NuxtLink>
-          </div>
-          <v-app-bar-nav-icon
-            class="hidden-md-and-up"
-            @click.stop="drawer = !drawer"
-          />
-        </v-container>
+              <div class="hidden-sm-and-down">
+                <NuxtLink
+                  v-for="({ text, link }, i) in items"
+                  :key="i"
+                  :to="link"
+                  class="menu-item mr-4"
+                >
+                  {{ text }}
+                </NuxtLink>
+              </div>
+
+              <v-app-bar-nav-icon
+                class="hidden-md-and-up"
+                @click.stop="drawer = !drawer"
+              />
+            </v-row>
+          </v-container>
+        </template>
       </v-toolbar>
-    </nav>
+    </v-app-bar>
   </div>
 </template>
-
-<script>
-export default {
-  data: () => ({
-    drawer: null,
-    items: [
-      {
-        icon: 'mdi-home-outline',
-        text: process.env.NAV_HOME_LABEL || 'Home',
-        link: '/',
-      },
-      {
-        icon: 'mdi-information-outline',
-        text: process.env.NAV_ABOUT_LABEL || 'About',
-        link: '/about',
-      },
-      {
-        icon: 'mdi-ballot-outline',
-        text: process.env.NAV_SERVICES_LABEL || 'Services',
-        link: '/services',
-      },
-      {
-        icon: 'mdi-email-outline',
-        text: process.env.NAV_CONTACTS_LABEL || 'Contacts',
-        link: '#contact',
-      },
-    ],
-    contactTitle1: process.env.CONTACT_TITLE_1 || 'Let’s Talk',
-    contactTitle2: process.env.CONTACT_TITLE_2 || 'Visiting here?',
-    phoneLabel: process.env.PHONE_LABEL || 'Phone',
-    phone: process.env.PHONE_LABEL_VALUE || '123-456-7890',
-    phoneValue: process.env.PHONE_VALUE || '123-456-7890',
-    email: process.env.EMAIL_VALUE || 'hi@restedminds.com',
-    address:
-      process.env.ADDRESS_VALUE ||
-      '1870 Alpaca Way Irvine, New York, 92614. US',
-  }),
-  mounted() {
-    // this.onResize()
-    // window.addEventListener('resize', this.onResize, { passive: true })
-
-    let prevScrollpos = window.pageYOffset
-    window.onscroll = function () {
-      const currentScrollPos = window.pageYOffset
-      if (prevScrollpos > currentScrollPos) {
-        document.getElementById('navigation').style.top = '0'
-      } else {
-        document.getElementById('navigation').style.top = '-150px'
-      }
-      prevScrollpos = currentScrollPos
-    }
-  },
-}
-</script>
 
 <style lang="scss" scoped>
 .drawer-content {
@@ -199,13 +188,12 @@ export default {
     }
   }
 
-  .container {
-    height: 100%;
-
+  .primary-header {
     .header-logo-wrap,
     .header-logo {
       height: 100%;
       max-width: 90%;
+      min-width: 200px;
     }
 
     .menu-item {
@@ -227,7 +215,9 @@ export default {
           left: 0;
           width: 100%;
           border-top: 4px solid;
-          transition: transform 0.3s ease, opacity 0.5s ease;
+          transition:
+            transform 0.3s ease,
+            opacity 0.5s ease;
         }
       }
     }

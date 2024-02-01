@@ -1,10 +1,10 @@
 <template>
-  <v-container fluid fill-height justify-center pa-5 class="home-hero">
-    <div class="hero-content font-weight-bold white--text text-center">
-      <div class="display-1 font-italic">{{ title }}</div>
-      <p class="subheading font-weight-light mt-5">{{ description }}</p>
+  <section class="home-hero d-flex align-center justify-center">
+    <div class="hero-content">
+      <h2 class="content-heading">{{ title }}</h2>
+      <p class="content-subheading">{{ description }}</p>
     </div>
-  </v-container>
+  </section>
 </template>
 
 <script>
@@ -23,7 +23,13 @@ export default {
 <style lang="scss" scoped>
 .home-hero {
   background: url('http://www.slashcreative.co/themes/psychare/wp-content/uploads/2020/10/quote-bg.jpg?id=202');
-  background-size: cover;
+  padding-top: 50px !important;
+  padding-bottom: 75px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  transition: opacity 0.5s ease;
+  overflow: hidden;
   width: 100%;
   height: 400px;
   position: relative;
@@ -37,11 +43,28 @@ export default {
     top: 0;
     left: 0;
     z-index: 1;
-    opacity: 0.8;
+    opacity: 0.9;
   }
 
   .hero-content {
-    z-index: 1;
+    color: #fff;
+    z-index: 999;
+
+    .content-heading {
+      font-size: 33px;
+      color: #fff;
+      line-height: 42px;
+      text-align: center;
+      font-style: italic;
+      font-weight: 400 !important;
+    }
+
+    .content-subheading {
+      color: rgba(255, 255, 255, 0.75);
+      text-align: center;
+      margin-top: 25px !important;
+      font-weight: 600 !important;
+    }
   }
 }
 </style>

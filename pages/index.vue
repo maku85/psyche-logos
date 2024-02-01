@@ -7,13 +7,5 @@
     <services-section></services-section>
     <separator></separator>
     <contact-section></contact-section>
-
-    <scroll-to-top></scroll-to-top>
   </v-content>
 </template>
-
-<script>
-export default {
-  name: 'IndexPage',
-}
-</script>

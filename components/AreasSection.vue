@@ -1,32 +1,30 @@
 <template>
-  <v-container id="approach">
+  <section id="approach">
     <v-container class="section-content">
-      <v-row class="align-center">
+      <v-row>
         <v-col cols="12" xs="12" sm="7">
           <div class="card-1">
             <h3 class="box-title font-weight-bold">{{ helpTitle }}</h3>
-            <p class="subheading mt-3">{{ helpParagraph }}</p>
+            <p class="subheading">{{ helpParagraph }}</p>
+
             <v-btn
-              class="font-weight-bold"
+              class="font-weight-bold pa-0 mt-3"
               color="accent"
-              dark
-              text
+              variant="plain"
               to="#areas"
               >{{ helpBtnLabel }}</v-btn
             >
           </div>
         </v-col>
 
-        <v-col cols="12" xs="12" sm="5">
-          <div class="card-2">
-            <h3
-              class="box-title font-weight-bold light-border-bottom white--text"
-            >
+        <v-col cols="12" xs="12" sm="5" class="align-self-stretch">
+          <div class="card-2 fill-height">
+            <h3 class="box-title font-weight-bold light-border-bottom">
               {{ contactTitle }}
             </h3>
             <div class="d-flex align-center mt-4">
               <div class="mr-5">
-                <v-btn color="accent" large fab dark depressed>
+                <v-btn color="accent" variant="text">
                   <v-icon>mdi-phone</v-icon>
                 </v-btn>
               </div>
@@ -41,7 +39,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </v-container>
+  </section>
 </template>
 
 <script>
@@ -64,7 +62,6 @@ export default {
 <style lang="scss" scoped>
 #approach {
   margin-top: -120px;
-  color: #5f5f5f;
   position: relative;
 
   .card-1,
@@ -84,7 +81,11 @@ export default {
   .card-2 {
     color: #fff;
     background: var(--dark-accent);
-    opacity: 0.9;
+    opacity: 0.92;
+
+    h3 {
+      color: #fff;
+    }
 
     p {
       opacity: 0.7;

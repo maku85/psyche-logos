@@ -1,13 +1,15 @@
 <template>
-  <v-content id="areas" class="section">
+  <section id="areas" class="section">
     <v-container class="section-content">
       <v-row>
         <v-col cols="12" sm="12" md="5" class="mr-10">
           <div>
             <p class="white-sub-heading">{{ subHeading }}</p>
-            <h2 class="white--text">{{ heading }}</h2>
+            <h2 class="heading">{{ heading }}</h2>
             <p class="white--text">{{ paragraph }}</p>
-            <v-btn to="/services" text>{{ btnLabel }}</v-btn>
+            <v-btn color="accent" to="/services" variant="flat">{{
+              btnLabel
+            }}</v-btn>
           </div>
         </v-col>
 
@@ -20,7 +22,7 @@
               md6
               class="service-block"
             >
-              <h4 class="white--text">
+              <h4 class="section-title">
                 <v-icon color="accent">mdi-circle-small</v-icon> {{ approach }}
               </h4>
             </v-flex>
@@ -28,7 +30,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </v-content>
+  </section>
 </template>
 
 <script>
@@ -53,6 +55,22 @@ export default {
 #areas {
   background-color: #151110;
   border-top: 5px solid var(--accent);
+
+  .heading {
+    font-size: 33px;
+    color: #fff;
+    line-height: 43px;
+  }
+
+  p {
+    margin-bottom: 16px !important;
+    font-weight: 600 !important;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .section-title {
+    color: #fff;
+  }
 
   .service-block {
     padding-left: 15px;

@@ -1,21 +1,27 @@
 <template>
   <section id="contact">
     <v-container class="section-content">
-      <section id="contact">
-        <v-container>
-          <v-row class="contact-card">
-            <v-col cols="12" xs="12" sm="5" class="pa-10 mt-8">
-              <p class="sub-heading">{{ title }}</p>
-              <h2 class="pb-8">{{ paragraph }}</h2>
+      <v-row>
+        <v-col>
+          <div class="d-flex flex-column align-center">
+            <p class="sub-heading">{{ subHeading }}</p>
+            <h2>{{ title }}</h2>
+          </div>
+        </v-col>
+      </v-row>
 
-              <v-list-item three-line class="mt-4 contact-box-1">
-                <v-list-item-icon>
-                  <v-icon> mdi-at</v-icon>
-                </v-list-item-icon>
-                <v-list-item-content>
-                  <v-list-item-title class="mb-3 title">{{
-                    contactTitle1
-                  }}</v-list-item-title>
+      <v-row class="contact-card">
+        <v-col cols="12" sm="4" class="pa-10 mt-6">
+          <v-row>
+            <v-col cols="2">
+              <v-icon> mdi-at</v-icon>
+            </v-col>
+            <v-col cols="10">
+              <v-list-item>
+                <v-list-item-content class="contact-box-1">
+                  <v-list-item-title>
+                    {{ contactTitle1 }}
+                  </v-list-item-title>
                   <v-list-item-subtitle>
                     <strong>{{ phoneLabel }}:</strong> {{ phone }}<br />
                   </v-list-item-subtitle>
@@ -24,63 +30,69 @@
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
+            </v-col>
+          </v-row>
+        </v-col>
 
-              <v-list-item three-line class="mt-4">
-                <v-list-item-icon>
-                  <v-icon> mdi-earth</v-icon>
-                </v-list-item-icon>
-                <v-list-item-content>
-                  <v-list-item-title class="mb-3 title">{{
-                    contactTitle2
-                  }}</v-list-item-title>
+        <v-col cols="12" sm="4" class="pa-10 mt-6">
+          <v-row>
+            <v-col cols="2">
+              <v-icon> mdi-earth</v-icon>
+            </v-col>
+            <v-col cols="10">
+              <v-list-item>
+                <v-list-item-content class="contact-box-1">
+                  <v-list-item-title>
+                    {{ contactTitle2 }}
+                  </v-list-item-title>
                   <v-list-item-subtitle v-html="address"></v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
             </v-col>
+          </v-row>
+        </v-col>
 
-            <v-col cols="12" xs="12" sm="7" class="pa-0">
-              <div class="contact-box text-center">
-                <h4>{{ formTitle }}</h4>
-                <p>{{ formSubtitle }}</p>
-                <contact-form></contact-form>
-              </div>
+        <v-col cols="12" sm="4" class="pa-10 mt-6">
+          <v-row>
+            <v-col cols="2">
+              <v-icon> mdi-at</v-icon>
+            </v-col>
+            <v-col cols="10">
+              <v-list-item>
+                <v-list-item-content class="contact-box-1">
+                  <v-list-item-title>
+                    {{ contactTitle3 }}
+                  </v-list-item-title>
+                  <v-list-item-subtitle>
+                    <strong>{{ timingRowLabel1 }}</strong
+                    >&nbsp;{{ timingRowValue1 }}
+                  </v-list-item-subtitle>
+                  <v-list-item-subtitle>
+                    <strong>{{ timingRowLabel2 }}</strong
+                    >&nbsp;{{ timingRowValue2 }}
+                  </v-list-item-subtitle>
+                  <v-list-item-subtitle>
+                    <strong>{{ timingRowLabel3 }}</strong
+                    >&nbsp;{{ timingRowValue3 }}
+                  </v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
             </v-col>
           </v-row>
-        </v-container>
-      </section>
+        </v-col>
+      </v-row>
     </v-container>
-
-    <div class="svg-border-waves text-white">
-      <v-img src="~@/assets/img/borderWavesBlue.svg" />
-    </div>
-
-    <v-snackbar
-      v-model="snackbar.enabled"
-      timeout="3000"
-      right
-      top
-      :color="snackbar.color"
-    >
-      {{ snackbar.text }}
-
-      <template #action="{ attrs }">
-        <v-btn text v-bind="attrs" @click="snackbar.enabled = false">
-          Close
-        </v-btn>
-      </template>
-    </v-snackbar>
   </section>
 </template>
 
 <script>
 export default {
   data: () => ({
-    title: process.env.CONTACT_TITLE || 'Contact me',
-    paragraph:
-      process.env.CONTACT_PARAGRAPH ||
-      'Submit your message and I will get in touch within one day.',
+    subHeading: process.env.CONTACT_PARAGRAPH || 'Get in touch',
+    title: process.env.CONTACT_TITLE || 'Here where you can find me',
     contactTitle1: process.env.CONTACT_TITLE_1 || 'Let’s Talk',
     contactTitle2: process.env.CONTACT_TITLE_2 || 'Visiting here?',
+    contactTitle3: process.env.CONTACT_TITLE_3 || 'My Timings',
     formTitle: process.env.CONTACT_FORM_TITLE || 'Write Your Queries',
     formSubtitle:
       process.env.CONTACT_FORM_SUB_TITLE ||
@@ -91,6 +103,12 @@ export default {
     address:
       process.env.ADDRESS_VALUE ||
       '1870 Alpaca Way Irvine, New York, 92614. US',
+    timingRowLabel1: process.env.TIMING_ROW_LABEL_1 || 'Mon - Fri:',
+    timingRowValue1: process.env.TIMING_ROW_VALUE_1 || '(9 am to 6 pm)',
+    timingRowLabel2: process.env.TIMING_ROW_LABEL_2 || 'Sat:',
+    timingRowValue2: process.env.TIMING_ROW_VALUE_2 || '(10 am to 5 pm)',
+    timingRowLabel3: process.env.TIMING_ROW_LABEL_3 || 'Sunday:',
+    timingRowValue3: process.env.TIMING_ROW_VALUE_3 || '(Closed)',
     icons: ['fa-facebook', 'fa-twitter', 'fa-linkedin', 'fa-instagram'],
     snackbar: {
       enabled: false,
@@ -98,28 +116,6 @@ export default {
       color: '',
     },
   }),
-  beforeDestroy() {
-    this.$recaptcha.destroy()
-  },
-  async mounted() {
-    try {
-      await this.$recaptcha.init()
-    } catch (e) {
-      console.error(e)
-    }
-  },
-  methods: {
-    async submit() {
-      try {
-        const token = await this.$recaptcha.execute('login')
-        console.log('ReCaptcha token:', token)
-
-        // send token to server alongside your form data
-      } catch (error) {
-        console.log('Login error:', error)
-      }
-    },
-  },
 }
 </script>
 
@@ -134,8 +130,24 @@ export default {
   }
 
   .contact-box-1 {
-    border-bottom: 1px solid #eeeeee;
-    padding-bottom: 15px !important;
+    &:before {
+      content: '';
+      position: absolute;
+      right: -4px;
+      top: -10px;
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      background: var(--accent);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      height: 100%;
+      top: 6px;
+      border-right: 2px dashed rgb(165 115 85/15%);
+    }
   }
 
   .contact-box {
